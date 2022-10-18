@@ -28,10 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Break));
             this.bttnStartFocusTime = new System.Windows.Forms.Button();
             this.labelCurrentTime = new System.Windows.Forms.Label();
             this.linkLabelSettings = new System.Windows.Forms.LinkLabel();
-            this.labelMainText = new System.Windows.Forms.Label();
+            this.pictureBoxMain = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMain)).BeginInit();
             this.SuspendLayout();
             // 
             // bttnStartFocusTime
@@ -49,7 +52,7 @@
             this.labelCurrentTime.BackColor = System.Drawing.SystemColors.Window;
             this.labelCurrentTime.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.labelCurrentTime.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelCurrentTime.Location = new System.Drawing.Point(3, 85);
+            this.labelCurrentTime.Location = new System.Drawing.Point(3, 215);
             this.labelCurrentTime.Name = "labelCurrentTime";
             this.labelCurrentTime.Size = new System.Drawing.Size(251, 50);
             this.labelCurrentTime.TabIndex = 2;
@@ -67,27 +70,38 @@
             this.linkLabelSettings.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.linkLabelSettings.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelSettings_LinkClicked);
             // 
-            // labelMainText
+            // pictureBoxMain
             // 
-            this.labelMainText.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelMainText.Location = new System.Drawing.Point(3, 62);
-            this.labelMainText.Name = "labelMainText";
-            this.labelMainText.Size = new System.Drawing.Size(251, 23);
-            this.labelMainText.TabIndex = 4;
-            this.labelMainText.Text = "Your Break Time:";
-            this.labelMainText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.pictureBoxMain.Image = global::FocusTimer.Properties.Resources.local_cafe_FILL1_wght400_GRAD0_opsz48;
+            this.pictureBoxMain.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxMain.InitialImage")));
+            this.pictureBoxMain.Location = new System.Drawing.Point(3, 3);
+            this.pictureBoxMain.Name = "pictureBoxMain";
+            this.pictureBoxMain.Size = new System.Drawing.Size(251, 183);
+            this.pictureBoxMain.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBoxMain.TabIndex = 5;
+            this.pictureBoxMain.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.Location = new System.Drawing.Point(3, 189);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(251, 23);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Take a Break!";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Break
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.labelMainText);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.pictureBoxMain);
             this.Controls.Add(this.linkLabelSettings);
             this.Controls.Add(this.labelCurrentTime);
             this.Controls.Add(this.bttnStartFocusTime);
             this.Name = "Break";
             this.Size = new System.Drawing.Size(260, 480);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMain)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -97,6 +111,7 @@
         private Button bttnStartFocusTime;
         private Label labelCurrentTime;
         private LinkLabel linkLabelSettings;
-        private Label labelMainText;
+        private PictureBox pictureBoxMain;
+        private Label label1;
     }
 }

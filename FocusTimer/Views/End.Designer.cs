@@ -28,10 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(End));
             this.bttnStartBreak = new System.Windows.Forms.Button();
             this.labelMainText = new System.Windows.Forms.Label();
             this.linkLabelSettings = new System.Windows.Forms.LinkLabel();
             this.bttnContinueFocusTime = new System.Windows.Forms.Button();
+            this.pictureBoxMain = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMain)).BeginInit();
             this.SuspendLayout();
             // 
             // bttnStartBreak
@@ -46,9 +49,9 @@
             // 
             // labelMainText
             // 
-            this.labelMainText.Location = new System.Drawing.Point(3, 106);
+            this.labelMainText.Location = new System.Drawing.Point(3, 189);
             this.labelMainText.Name = "labelMainText";
-            this.labelMainText.Size = new System.Drawing.Size(254, 23);
+            this.labelMainText.Size = new System.Drawing.Size(251, 23);
             this.labelMainText.TabIndex = 1;
             this.labelMainText.Text = "You Focus Time is finished.";
             this.labelMainText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -66,7 +69,7 @@
             // 
             // bttnContinueFocusTime
             // 
-            this.bttnContinueFocusTime.Location = new System.Drawing.Point(79, 144);
+            this.bttnContinueFocusTime.Location = new System.Drawing.Point(80, 215);
             this.bttnContinueFocusTime.Name = "bttnContinueFocusTime";
             this.bttnContinueFocusTime.Size = new System.Drawing.Size(98, 30);
             this.bttnContinueFocusTime.TabIndex = 3;
@@ -74,10 +77,22 @@
             this.bttnContinueFocusTime.UseVisualStyleBackColor = true;
             this.bttnContinueFocusTime.Click += new System.EventHandler(this.bttnContinueFocusTime_Click);
             // 
+            // pictureBoxMain
+            // 
+            this.pictureBoxMain.Image = global::FocusTimer.Properties.Resources.check_circle_FILL1_wght400_GRAD0_opsz48;
+            this.pictureBoxMain.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxMain.InitialImage")));
+            this.pictureBoxMain.Location = new System.Drawing.Point(3, 3);
+            this.pictureBoxMain.Name = "pictureBoxMain";
+            this.pictureBoxMain.Size = new System.Drawing.Size(251, 183);
+            this.pictureBoxMain.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBoxMain.TabIndex = 7;
+            this.pictureBoxMain.TabStop = false;
+            // 
             // End
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.pictureBoxMain);
             this.Controls.Add(this.bttnContinueFocusTime);
             this.Controls.Add(this.linkLabelSettings);
             this.Controls.Add(this.labelMainText);
@@ -85,6 +100,7 @@
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Name = "End";
             this.Size = new System.Drawing.Size(260, 480);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMain)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -95,5 +111,6 @@
         private Label labelMainText;
         private LinkLabel linkLabelSettings;
         private Button bttnContinueFocusTime;
+        private PictureBox pictureBoxMain;
     }
 }

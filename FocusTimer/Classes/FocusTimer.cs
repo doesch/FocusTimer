@@ -52,8 +52,7 @@ namespace FocusTimer.Classes
         {
             // set start value
             CurrentTime = default(TimeSpan); // reset time
-            // CurrentTime += TimeSpan.FromMinutes(25);
-            CurrentTime += TimeSpan.FromSeconds(3);
+            CurrentTime += TimeSpan.FromMinutes(StartValue);
 
             // start timer
             m_Timer.Start();

@@ -34,5 +34,17 @@ namespace FocusTimer {
                 this["FullPathToMusicFiles"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("25")]
+        public int StartValue {
+            get {
+                return ((int)(this["StartValue"]));
+            }
+            set {
+                this["StartValue"] = value;
+            }
+        }
     }
 }

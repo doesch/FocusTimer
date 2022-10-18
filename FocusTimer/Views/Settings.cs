@@ -38,10 +38,11 @@ namespace FocusTimer
         /// <exception cref="NotImplementedException"></exception>
         private void Init()
         {
-            // apply settings
-
-            // Music files
+            // apply path to music files from settings
             var fullPathToMusicFiles = SettingsFile.Default.FullPathToMusicFiles;
+
+            // apply start time for focus time from settings
+            inputTime.Value = SettingsFile.Default.StartValue;
 
             // load music files
             LoadMusicFiles(fullPathToMusicFiles);
@@ -54,8 +55,14 @@ namespace FocusTimer
         /// <param name="e"></param>
         private void bttnStart_Click(object sender, EventArgs e)
         {
+            var startValue = (int)inputTime.Value;
+
             // apply start value
-            m_Timer.StartValue = (int)inputTime.Value;
+            m_Timer.StartValue = startValue;
+
+            // save selected time in settings
+            SettingsFile.Default.StartValue = startValue;
+            SettingsFile.Default.Save();
 
             // change view
             ChangeView(ViewsEnum.KeepFocus);
@@ -118,8 +125,7 @@ namespace FocusTimer
                 // select random track
                 var rowIndex = new Random().Next(0, dataGridViewPlayList.RowCount - 1);
                 dataGridViewPlayList.Rows[rowIndex].Cells[0].Selected = true;
-                OnTrackSelected(dataGridViewPlayList, null);
-                
+                OnTrackSelected(dataGridViewPlayList, null);                
             }
         }
 
