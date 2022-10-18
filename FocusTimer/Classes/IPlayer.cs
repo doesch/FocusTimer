@@ -21,7 +21,7 @@ namespace FocusTimer.Classes
         /// </summary>
         public ITrack SelectedTrack { get; set; }
 
-        public void Start();
+        public void Play();
 
         public void Stop();
 

@@ -39,6 +39,9 @@ namespace FocusTimer
         /// </summary>
         private void Init()
         {
+            // play music
+            m_Player.Play();
+
             // assign handler
             m_Timer.OnTick = OnTick;
 
@@ -83,7 +86,13 @@ namespace FocusTimer
         /// <param name="e"></param>
         private void BttnStop_Click(object sender, EventArgs e)
         {
+            // stop music
+            this.m_Player.Pause();
+
+            // stop timer
             this.m_Timer.Stop();
+
+            // change view
             this.ChangeView(ViewsEnum.End);
         }
     }

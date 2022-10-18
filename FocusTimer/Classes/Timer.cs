@@ -52,9 +52,12 @@ namespace FocusTimer.Classes
             m_Timer.Start();
         }
 
+        /// <summary>
+        /// Stops the timer
+        /// </summary>
         public void Stop()
         {
-            throw new NotImplementedException();
+            m_Timer.Stop();
         }
 
         /// <summary>
