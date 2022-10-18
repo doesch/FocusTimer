@@ -42,9 +42,16 @@ namespace FocusTimer
                     break;
                 case ViewsEnum.KeepFocus:
                     view = new KeepFocus(m_Timer, m_Player);
+                    // minimize window
+                    this.WindowState = FormWindowState.Minimized;
                     break;
                 case ViewsEnum.End:
                     view = new End(m_Timer, m_Player);
+                    // show window (if minimized)
+                    if (this.WindowState != FormWindowState.Normal)
+                    {
+                        this.WindowState = FormWindowState.Normal;
+                    }                    
                     break;
                 case ViewsEnum.Break:
                     view = new Break(new BreakTimer());
