@@ -35,7 +35,7 @@ namespace FocusTimer.Classes
         private string m_CurrentTrackInPlayer { get; set; }
 
         // the alarm, which will be trigged when the focus time is over
-        private static SoundPlayer Alarm = new SoundPlayer(Path.Combine(Environment.CurrentDirectory, @"SoundFiles\", "582601__nezuai__ui-sound-4.wav"));
+        private static SoundPlayer Alarm = new SoundPlayer(Path.Combine(Environment.CurrentDirectory, @"SoundFiles\", "582597__nezuai__ui-sound-2.wav"));
 
         /// <summary>
         /// Pause Music
@@ -90,7 +90,7 @@ namespace FocusTimer.Classes
                 for (int i = 0; i < 3; i++)
                 {
                     Alarm.Play();
-                    Thread.Sleep(2000);
+                    Thread.Sleep(1250);
                 }
             }).Start();
         }

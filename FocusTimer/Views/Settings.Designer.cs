@@ -88,6 +88,7 @@
             // 
             // dataGridViewPlayList
             // 
+            this.dataGridViewPlayList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridViewPlayList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewPlayList.Location = new System.Drawing.Point(3, 98);
             this.dataGridViewPlayList.MultiSelect = false;

@@ -76,10 +76,12 @@ namespace FocusTimer
         private void OnEnd(object? sender, EventArgs e)
         {
             // keep timer running to calculate the overtime
+            // stop timer
+            m_Timer.Stop();
 
-            this.m_Player.Pause();
-            this.m_Timer.Stop();
-
+            // Play the alarm
+            Player.PlayAlarm();
+            
             ChangeView(ViewsEnum.End);
         }
 

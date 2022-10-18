@@ -25,6 +25,9 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>SettingsFile.Designer.cs</LastGenOutput>
     </None>
+    <None Update="Soundfiles\582597__nezuai__ui-sound-2.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Soundfiles\582601__nezuai__ui-sound-4.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
