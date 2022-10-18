@@ -44,7 +44,7 @@ namespace FocusTimer
                     view = new KeepFocus(m_Timer, m_Player);
                     break;
                 case ViewsEnum.End:
-                    view = new End();
+                    view = new End(m_Timer, m_Player);
                     break;
                 case ViewsEnum.Break:
                     view = new Break();
