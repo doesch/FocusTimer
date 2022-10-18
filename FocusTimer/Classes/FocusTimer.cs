@@ -7,7 +7,7 @@ using System.Timers;
 
 namespace FocusTimer.Classes
 {
-    public class Timer : ITimer
+    public class FocusTimer : IFocusTimer
     {
         /// <summary>
         /// The native timer
@@ -37,7 +37,7 @@ namespace FocusTimer.Classes
         /// <summary>
         /// constructor
         /// </summary>
-        public Timer() 
+        public FocusTimer() 
         {
             // init .NET timer object
             m_Timer.Interval = 1000; // event fires every 1000 seconds

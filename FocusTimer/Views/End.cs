@@ -15,10 +15,10 @@ namespace FocusTimer.Views
 
     public partial class End : BaseView
     {
-        private ITimer m_Timer;
+        private IFocusTimer m_Timer;
         private IPlayer m_Player;
 
-        public End(ITimer pTimer, IPlayer pPlayer)
+        public End(IFocusTimer pTimer, IPlayer pPlayer)
         {
             m_Timer = pTimer;
             m_Player = pPlayer;
@@ -27,6 +27,9 @@ namespace FocusTimer.Views
 
         private void bttnStartBreak_Click(object sender, EventArgs e)
         {
+            // pause music
+            m_Player.Pause();
+
             this.ChangeView(ViewsEnum.Break);
         }
 

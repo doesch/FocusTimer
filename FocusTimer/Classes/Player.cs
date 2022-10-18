@@ -17,7 +17,7 @@ namespace FocusTimer.Classes
         /// <summary> The player. </summary>
         private static WaveOut m_Player;
 
-        public static Mp3FileReader Reader { get; private set; }
+        private static Mp3FileReader m_Reader;
 
         /// <summary>
         /// All tracks
@@ -56,9 +56,9 @@ namespace FocusTimer.Classes
             // play new song, when path has changed, else continue current selected (pause release)
             if (SelectedTrack.FullPath != m_CurrentTrackInPlayer)
             {
-                Reader = new Mp3FileReader(SelectedTrack.FullPath);
+                m_Reader = new Mp3FileReader(SelectedTrack.FullPath);
                 m_Player = new WaveOut();
-                m_Player.Init(Reader);
+                m_Player.Init(m_Reader);
 
                 // cache the latest selected patch
                 m_CurrentTrackInPlayer = SelectedTrack.FullPath;
@@ -76,7 +76,7 @@ namespace FocusTimer.Classes
             {
                 m_Player.Stop();
                 m_Player.Dispose();
-                Reader.Dispose();
+                m_Reader.Dispose();
             }
         }
 

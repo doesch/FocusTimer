@@ -17,7 +17,7 @@ namespace FocusTimer
     /// </summary>
     public partial class KeepFocus : BaseView
     {
-        private ITimer m_Timer;
+        private IFocusTimer m_Timer;
         private IPlayer m_Player;
 
         /// <summary>
@@ -25,7 +25,7 @@ namespace FocusTimer
         /// </summary>
         /// <param name="pTime"></param>
         /// <param name="pSelectedTrack"></param>
-        public KeepFocus(ITimer pTimer, IPlayer pPlayer)
+        public KeepFocus(IFocusTimer pTimer, IPlayer pPlayer)
         {
             m_Timer = pTimer;
             m_Player = pPlayer;
@@ -61,7 +61,7 @@ namespace FocusTimer
         private void OnTick(object? sender, EventArgs e)
         {
             // show time in label
-            var timer = (FocusTimer.Classes.Timer)sender;
+            var timer = (FocusTimer.Classes.FocusTimer)sender;
 
             // use invoker for threads
             RenderTime(timer);
@@ -89,18 +89,18 @@ namespace FocusTimer
         /// Display the time
         /// </summary>
         /// <param name="timer"></param>
-        private void RenderTime(ITimer pTimer)
+        private void RenderTime(IFocusTimer pTimer)
         {
             if (this.labelCurrentTime.InvokeRequired)
             {
                 this.Invoke(new MethodInvoker(delegate ()
                 {
-                    labelCurrentTime.Text = pTimer.CurrentTime.ToString("hh\\:mm\\:ss");
+                    labelCurrentTime.Text = pTimer.CurrentTime.ToString(Constants.DisplayTimeFormat);
                 }));
             }
             else
             {
-                labelCurrentTime.Text = pTimer.CurrentTime.ToString("hh\\:mm\\:ss");
+                labelCurrentTime.Text = pTimer.CurrentTime.ToString(Constants.DisplayTimeFormat);
             }
         }
 

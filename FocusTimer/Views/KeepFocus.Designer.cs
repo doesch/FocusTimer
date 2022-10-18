@@ -65,13 +65,13 @@
             // 
             // linkLabelBreak
             // 
-            this.linkLabelBreak.AutoSize = true;
-            this.linkLabelBreak.Location = new System.Drawing.Point(84, 409);
+            this.linkLabelBreak.Location = new System.Drawing.Point(3, 401);
             this.linkLabelBreak.Name = "linkLabelBreak";
-            this.linkLabelBreak.Size = new System.Drawing.Size(88, 15);
+            this.linkLabelBreak.Size = new System.Drawing.Size(254, 23);
             this.linkLabelBreak.TabIndex = 2;
             this.linkLabelBreak.TabStop = true;
-            this.linkLabelBreak.Text = "Make a Break >";
+            this.linkLabelBreak.Text = "Take a Break >";
+            this.linkLabelBreak.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.linkLabelBreak.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelBreak_LinkClicked);
             // 
             // KeepFocus
@@ -84,7 +84,6 @@
             this.Name = "KeepFocus";
             this.Size = new System.Drawing.Size(260, 480);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

@@ -6,11 +6,8 @@ using System.Threading.Tasks;
 
 namespace FocusTimer.Classes
 {
-    public interface ITimer
+    public interface IBreakTimer
     {
-        // the value in Minutes
-        public int StartValue { set; }
-
         public TimeSpan CurrentTime { get; }
 
         void Start();
@@ -21,10 +18,5 @@ namespace FocusTimer.Classes
         /// Eventhandler which fires every 1 second
         /// </summary>
         public EventHandler OnTick { set; get; }
-
-        /// <summary>
-        /// Eventhandler which fires when timer ends
-        /// </summary>
-        public EventHandler OnEnd { set; get; }
     }
 }

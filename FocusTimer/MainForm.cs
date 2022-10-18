@@ -11,7 +11,7 @@ namespace FocusTimer
         /// <summary>
         /// Shares data between all views
         /// </summary>
-        private static ITimer m_Timer = new Classes.Timer();
+        private static IFocusTimer m_Timer = new Classes.FocusTimer();
         private static IPlayer m_Player = new Player();
 
         public MainForm()
@@ -47,7 +47,7 @@ namespace FocusTimer
                     view = new End(m_Timer, m_Player);
                     break;
                 case ViewsEnum.Break:
-                    view = new Break();
+                    view = new Break(new BreakTimer());
                     break;
                 case ViewsEnum.Stats:
                     view = new Stats();

@@ -20,10 +20,10 @@ namespace FocusTimer
         /// <summary>
         /// Data shared between views
         /// </summary>
-        private ITimer m_Timer;
+        private IFocusTimer m_Timer;
         private IPlayer m_Player;
 
-        public Settings(ITimer pTimer, IPlayer pPlayer)
+        public Settings(IFocusTimer pTimer, IPlayer pPlayer)
         {
             m_Timer = pTimer;
             m_Player = pPlayer;
