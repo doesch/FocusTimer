@@ -1,7 +1,9 @@
 ﻿using NAudio.Wave;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -31,6 +33,9 @@ namespace FocusTimer.Classes
         /// caches the path of the track that is currently loaded in the player
         /// </summary>
         private string m_CurrentTrackInPlayer { get; set; }
+
+        // the alarm, which will be trigged when the focus time is over
+        private static SoundPlayer Alarm = new SoundPlayer(Path.Combine(Environment.CurrentDirectory, @"SoundFiles\", "582601__nezuai__ui-sound-4.wav"));
 
         /// <summary>
         /// Pause Music
@@ -73,6 +78,21 @@ namespace FocusTimer.Classes
                 m_Player.Dispose();
                 Reader.Dispose();
             }
+        }
+
+        /// <summary>
+        /// Play alarm sound
+        /// </summary>
+        public static void PlayAlarm()
+        {
+            new Thread(() =>
+            {
+                for (int i = 0; i < 3; i++)
+                {
+                    Alarm.Play();
+                    Thread.Sleep(2000);
+                }
+            }).Start();
         }
     }
 }

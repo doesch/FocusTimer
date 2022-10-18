@@ -43,7 +43,8 @@ namespace FocusTimer
             m_Player.Play();
 
             // assign handler
-            m_Timer.OnTick = OnTick;
+            m_Timer.OnTick = OnTick;            
+            m_Timer.OnEnd = OnEnd;
 
             // start timer
             m_Timer.Start();
@@ -57,17 +58,29 @@ namespace FocusTimer
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void OnTick(object sender, EventArgs e)
+        private void OnTick(object? sender, EventArgs e)
         {
             // show time in label
             var timer = (FocusTimer.Classes.Timer)sender;
 
             // use invoker for threads
-            this.Invoke(new MethodInvoker(delegate ()
-            {
-                RenderTime(timer);
-            }));
-            
+            RenderTime(timer);
+        }
+
+        /// <summary>
+        /// Handler when timer ends
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        /// <exception cref="NotImplementedException"></exception>
+        private void OnEnd(object? sender, EventArgs e)
+        {
+            // keep timer running to calculate the overtime
+
+            this.m_Player.Pause();
+            this.m_Timer.Stop();
+
+            ChangeView(ViewsEnum.End);
         }
 
         /// <summary>
@@ -76,7 +89,17 @@ namespace FocusTimer
         /// <param name="timer"></param>
         private void RenderTime(ITimer pTimer)
         {
-            labelCurrentTime.Text = pTimer.CurrentTime.ToString("hh\\:mm\\:ss");
+            if (this.labelCurrentTime.InvokeRequired)
+            {
+                this.Invoke(new MethodInvoker(delegate ()
+                {
+                    labelCurrentTime.Text = pTimer.CurrentTime.ToString("hh\\:mm\\:ss");
+                }));
+            }
+            else
+            {
+                labelCurrentTime.Text = pTimer.CurrentTime.ToString("hh\\:mm\\:ss");
+            }
         }
 
         /// <summary>
@@ -92,8 +115,25 @@ namespace FocusTimer
             // stop timer
             this.m_Timer.Stop();
 
-            // change view
-            this.ChangeView(ViewsEnum.End);
+            // go to settings view
+            this.ChangeView(ViewsEnum.Settings);
+        }
+
+        /// <summary>
+        /// When user wants to make abreak
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void linkLabelBreak_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            // stop music
+            this.m_Player.Pause();
+
+            // stop timer
+            this.m_Timer.Stop();
+
+            // go to settings view
+            this.ChangeView(ViewsEnum.Break);
         }
     }
 }

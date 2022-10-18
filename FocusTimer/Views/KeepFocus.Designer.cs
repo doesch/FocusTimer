@@ -32,6 +32,7 @@
             this.BttnStop = new System.Windows.Forms.Button();
             this.labelCurrentTime = new System.Windows.Forms.Label();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.linkLabelBreak = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // BttnStop
@@ -62,15 +63,28 @@
             this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             // 
+            // linkLabelBreak
+            // 
+            this.linkLabelBreak.AutoSize = true;
+            this.linkLabelBreak.Location = new System.Drawing.Point(84, 409);
+            this.linkLabelBreak.Name = "linkLabelBreak";
+            this.linkLabelBreak.Size = new System.Drawing.Size(88, 15);
+            this.linkLabelBreak.TabIndex = 2;
+            this.linkLabelBreak.TabStop = true;
+            this.linkLabelBreak.Text = "Make a Break >";
+            this.linkLabelBreak.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelBreak_LinkClicked);
+            // 
             // KeepFocus
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.linkLabelBreak);
             this.Controls.Add(this.labelCurrentTime);
             this.Controls.Add(this.BttnStop);
             this.Name = "KeepFocus";
             this.Size = new System.Drawing.Size(260, 480);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -79,5 +93,6 @@
         private Button BttnStop;
         private Label labelCurrentTime;
         private ImageList imageList1;
+        private LinkLabel linkLabelBreak;
     }
 }

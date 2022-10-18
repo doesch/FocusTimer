@@ -58,11 +58,30 @@ namespace FocusTimer
             }
 
             // assign event handler
-            view.OnViewChanged += new EventHandler(OnViewChanged);            
+            view.OnViewChanged += new EventHandler(OnViewChanged);
 
             // load the control
+            if (this.mainLayoutPanel.InvokeRequired)
+            {
+                this.Invoke(new MethodInvoker(delegate ()
+                {
+                    LoadView(view);
+                }));
+            }
+            else
+            {
+                LoadView(view);
+            }
+        }
+
+        /// <summary>
+        /// load the view
+        /// </summary>
+        /// <param name="pView"></param>
+        private void LoadView(BaseView pView)
+        {
             mainLayoutPanel.Controls.Clear();
-            mainLayoutPanel.Controls.Add(view);
+            mainLayoutPanel.Controls.Add(pView);
         }
 
         /// <summary>
@@ -70,7 +89,7 @@ namespace FocusTimer
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void OnViewChanged(object sender, EventArgs e)
+        private void OnViewChanged(object? sender, EventArgs e)
         {
             var viewBase = (BaseView)sender;
             LoadView(viewBase.NextView);

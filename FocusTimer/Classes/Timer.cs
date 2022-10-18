@@ -35,18 +35,25 @@ namespace FocusTimer.Classes
         public EventHandler OnEnd { set; get; }
 
         /// <summary>
-        /// Start the timer
+        /// constructor
         /// </summary>
-        public void Start()
+        public Timer() 
         {
             // init .NET timer object
             m_Timer.Interval = 1000; // event fires every 1000 seconds
             m_Timer.Enabled = true;
             m_Timer.Elapsed += new ElapsedEventHandler(OnTimerTick);
+        }
 
+        /// <summary>
+        /// Start the timer
+        /// </summary>
+        public void Start()
+        {
             // set start value
             CurrentTime = default(TimeSpan); // reset time
-            CurrentTime += TimeSpan.FromMinutes(25);
+            // CurrentTime += TimeSpan.FromMinutes(25);
+            CurrentTime += TimeSpan.FromSeconds(3);
 
             // start timer
             m_Timer.Start();
