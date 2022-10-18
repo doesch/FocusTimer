@@ -11,7 +11,15 @@ namespace FocusTimer.Classes
     /// </summary>
     public class Player : IPlayer
     {
-        public ITrack Track { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        /// <summary>
+        /// All tracks
+        /// </summary>
+        public List<ITrack> Tracklist { get; set; } = new List<ITrack>();
+
+        /// <summary>
+        /// Selected Track
+        /// </summary>
+        public ITrack SelectedTrack { get; set; }
 
         public void Pause()
         {

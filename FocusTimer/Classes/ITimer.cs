@@ -17,8 +17,6 @@ namespace FocusTimer.Classes
 
         void Stop();
 
-        void Pause();
-
         /// <summary>
         /// Eventhandler which fires every 1 second
         /// </summary>

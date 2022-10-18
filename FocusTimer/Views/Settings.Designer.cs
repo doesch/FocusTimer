@@ -34,7 +34,6 @@
             this.dataGridViewPlayList = new System.Windows.Forms.DataGridView();
             this.labelPlayList = new System.Windows.Forms.Label();
             this.labelFocusTimeMinutes = new System.Windows.Forms.Label();
-            this.bttnPlayMusic = new System.Windows.Forms.Button();
             this.bttnSelectDirectory = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.inputTime)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPlayList)).BeginInit();
@@ -91,9 +90,11 @@
             // 
             this.dataGridViewPlayList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewPlayList.Location = new System.Drawing.Point(3, 98);
+            this.dataGridViewPlayList.MultiSelect = false;
             this.dataGridViewPlayList.Name = "dataGridViewPlayList";
+            this.dataGridViewPlayList.RowHeadersVisible = false;
             this.dataGridViewPlayList.RowTemplate.Height = 25;
-            this.dataGridViewPlayList.Size = new System.Drawing.Size(254, 260);
+            this.dataGridViewPlayList.Size = new System.Drawing.Size(254, 323);
             this.dataGridViewPlayList.TabIndex = 2;
             // 
             // labelPlayList
@@ -114,28 +115,19 @@
             this.labelFocusTimeMinutes.TabIndex = 4;
             this.labelFocusTimeMinutes.Text = "Focus Time (Minutes):";
             // 
-            // bttnPlayMusic
-            // 
-            this.bttnPlayMusic.Location = new System.Drawing.Point(3, 364);
-            this.bttnPlayMusic.Name = "bttnPlayMusic";
-            this.bttnPlayMusic.Size = new System.Drawing.Size(47, 23);
-            this.bttnPlayMusic.TabIndex = 5;
-            this.bttnPlayMusic.Text = "Play";
-            this.bttnPlayMusic.UseVisualStyleBackColor = true;
-            // 
             // bttnSelectDirectory
             // 
-            this.bttnSelectDirectory.Location = new System.Drawing.Point(228, 364);
+            this.bttnSelectDirectory.Location = new System.Drawing.Point(228, 72);
             this.bttnSelectDirectory.Name = "bttnSelectDirectory";
             this.bttnSelectDirectory.Size = new System.Drawing.Size(29, 23);
             this.bttnSelectDirectory.TabIndex = 6;
             this.bttnSelectDirectory.Text = "...";
             this.bttnSelectDirectory.UseVisualStyleBackColor = true;
+            this.bttnSelectDirectory.Click += new System.EventHandler(this.bttnSelectDirectory_Click);
             // 
             // Settings
             // 
             this.Controls.Add(this.bttnSelectDirectory);
-            this.Controls.Add(this.bttnPlayMusic);
             this.Controls.Add(this.labelFocusTimeMinutes);
             this.Controls.Add(this.labelPlayList);
             this.Controls.Add(this.dataGridViewPlayList);
@@ -158,7 +150,6 @@
         private DataGridView dataGridViewPlayList;
         private Label labelPlayList;
         private Label labelFocusTimeMinutes;
-        private Button bttnPlayMusic;
         private Button bttnSelectDirectory;
     }
 }

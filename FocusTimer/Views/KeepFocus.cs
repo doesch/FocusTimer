@@ -12,6 +12,9 @@ using FocusTimer.Classes;
 
 namespace FocusTimer
 {
+    /// <summary>
+    /// The view where the user keeps focus
+    /// </summary>
     public partial class KeepFocus : BaseView
     {
         private ITimer m_Timer;
@@ -31,18 +34,26 @@ namespace FocusTimer
             Init();
         }
 
+        /// <summary>
+        /// Init view
+        /// </summary>
         private void Init()
         {
             // assign handler
             m_Timer.OnTick = OnTick;
 
-            // show init time
-            labelCurrentTime.Text = m_Timer.CurrentTime.ToString("hh\\:mm\\:ss");
-
             // start timer
             m_Timer.Start();
+
+            // display init time
+            RenderTime(m_Timer);
         }
 
+        /// <summary>
+        /// An Tick-Timer
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OnTick(object sender, EventArgs e)
         {
             // show time in label
@@ -51,13 +62,28 @@ namespace FocusTimer
             // use invoker for threads
             this.Invoke(new MethodInvoker(delegate ()
             {
-                labelCurrentTime.Text = m_Timer.CurrentTime.ToString("hh\\:mm\\:ss");
+                RenderTime(timer);
             }));
             
         }
 
+        /// <summary>
+        /// Display the time
+        /// </summary>
+        /// <param name="timer"></param>
+        private void RenderTime(ITimer pTimer)
+        {
+            labelCurrentTime.Text = pTimer.CurrentTime.ToString("hh\\:mm\\:ss");
+        }
+
+        /// <summary>
+        /// When user stopped
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BttnStop_Click(object sender, EventArgs e)
         {
+            this.m_Timer.Stop();
             this.ChangeView(ViewsEnum.End);
         }
     }

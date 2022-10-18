@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,8 +12,10 @@ namespace FocusTimer.Classes
     /// </summary>
     public interface ITrack
     {
-        public string DisplayTitle { get; set; }
+        [Browsable(false)]
+        public string FullPath  { get; }
 
-        public string FullPath  { get; set; }
+        [DisplayName("Name")]
+        public string DisplayName { get; }
     }
 }

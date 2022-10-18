@@ -23,7 +23,7 @@ namespace FocusTimer
         private void Init()
         {
             // load init view
-            LoadView(ViewsEnum.Settings);
+            LoadView(ViewsEnum.Settings);            
         }
 
         /// <summary>

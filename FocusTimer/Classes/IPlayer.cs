@@ -6,9 +6,20 @@ using System.Threading.Tasks;
 
 namespace FocusTimer.Classes
 {
+    /// <summary>
+    /// The player
+    /// </summary>
     public interface IPlayer
     {
-        public ITrack Track { get; set; }
+        /// <summary>
+        /// The tracklist
+        /// </summary>
+        public List<ITrack> Tracklist { get; set; }
+
+        /// <summary>
+        /// The selected Track
+        /// </summary>
+        public ITrack SelectedTrack { get; set; }
 
         public void Start();
 

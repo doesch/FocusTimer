@@ -34,16 +34,6 @@ namespace FocusTimer.Classes
         /// </summary>
         public EventHandler OnEnd { set; get; }
 
-        public Timer()
-        {
-
-        }
-
-        public void Pause()
-        {
-
-        }
-
         /// <summary>
         /// Start the timer
         /// </summary>
@@ -72,7 +62,7 @@ namespace FocusTimer.Classes
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void OnTimerTick(object sender, EventArgs e)
+        private void OnTimerTick(object? sender, EventArgs e)
         {
             // deduct 1 second from time
             CurrentTime -= TimeSpan.FromSeconds(1);
@@ -80,13 +70,13 @@ namespace FocusTimer.Classes
             // execute events
             if (OnTick != null)
             {
-                OnTick(this, null);
+                OnTick(this, e);
             }
 
             // execute event, when timer ran out (finished)
             if (OnEnd != null && CurrentTime <= default(TimeSpan))
             {
-                OnEnd(this, null);
+                OnEnd(this, e);
             }
         }
     }
