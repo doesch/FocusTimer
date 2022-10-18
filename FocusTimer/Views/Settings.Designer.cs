@@ -65,7 +65,7 @@
             0,
             0,
             0});
-            this.inputTime.Location = new System.Drawing.Point(3, 36);
+            this.inputTime.Location = new System.Drawing.Point(3, 18);
             this.inputTime.Maximum = new decimal(new int[] {
             240,
             0,
@@ -90,18 +90,18 @@
             // 
             this.dataGridViewPlayList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridViewPlayList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewPlayList.Location = new System.Drawing.Point(3, 98);
+            this.dataGridViewPlayList.Location = new System.Drawing.Point(3, 76);
             this.dataGridViewPlayList.MultiSelect = false;
             this.dataGridViewPlayList.Name = "dataGridViewPlayList";
             this.dataGridViewPlayList.RowHeadersVisible = false;
             this.dataGridViewPlayList.RowTemplate.Height = 25;
-            this.dataGridViewPlayList.Size = new System.Drawing.Size(254, 323);
+            this.dataGridViewPlayList.Size = new System.Drawing.Size(254, 345);
             this.dataGridViewPlayList.TabIndex = 2;
             // 
             // labelPlayList
             // 
             this.labelPlayList.AutoSize = true;
-            this.labelPlayList.Location = new System.Drawing.Point(3, 80);
+            this.labelPlayList.Location = new System.Drawing.Point(3, 55);
             this.labelPlayList.Name = "labelPlayList";
             this.labelPlayList.Size = new System.Drawing.Size(47, 15);
             this.labelPlayList.TabIndex = 3;
@@ -110,7 +110,7 @@
             // labelFocusTimeMinutes
             // 
             this.labelFocusTimeMinutes.AutoSize = true;
-            this.labelFocusTimeMinutes.Location = new System.Drawing.Point(3, 18);
+            this.labelFocusTimeMinutes.Location = new System.Drawing.Point(3, 0);
             this.labelFocusTimeMinutes.Name = "labelFocusTimeMinutes";
             this.labelFocusTimeMinutes.Size = new System.Drawing.Size(124, 15);
             this.labelFocusTimeMinutes.TabIndex = 4;
@@ -118,7 +118,7 @@
             // 
             // bttnSelectDirectory
             // 
-            this.bttnSelectDirectory.Location = new System.Drawing.Point(228, 72);
+            this.bttnSelectDirectory.Location = new System.Drawing.Point(228, 47);
             this.bttnSelectDirectory.Name = "bttnSelectDirectory";
             this.bttnSelectDirectory.Size = new System.Drawing.Size(29, 23);
             this.bttnSelectDirectory.TabIndex = 6;

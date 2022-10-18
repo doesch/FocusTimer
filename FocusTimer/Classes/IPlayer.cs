@@ -26,5 +26,7 @@ namespace FocusTimer.Classes
         public void Stop();
 
         public void Pause();
+        void LoadPlaylist(string selectedPath);
+        void SelectRandomTrack();
     }
 }

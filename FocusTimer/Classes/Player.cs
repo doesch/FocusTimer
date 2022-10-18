@@ -53,6 +53,12 @@ namespace FocusTimer.Classes
         /// </summary>
         public void Play()
         {
+            // check if track is selected
+            if (SelectedTrack == null)
+            {
+                return;
+            }
+
             // play new song, when path has changed, else continue current selected (pause release)
             if (SelectedTrack.FullPath != m_CurrentTrackInPlayer)
             {
@@ -93,6 +99,40 @@ namespace FocusTimer.Classes
                     Thread.Sleep(1250);
                 }
             }).Start();
+        }
+
+        /// <summary>
+        /// Load Playlist
+        /// </summary>
+        /// <param name="selectedPath"></param>
+        public void LoadPlaylist(string pSelectedPath)
+        {
+            if (pSelectedPath != null && Directory.Exists(pSelectedPath))
+            {
+                string[] files = Directory.GetFiles(pSelectedPath);
+
+                // clear list
+                this.Tracklist.Clear();
+
+                // add files to tracklist
+                foreach (var fullPath in files)
+                {
+                    if (fullPath.EndsWith("mp3")) // filter supported file types
+                    {
+                        this.Tracklist.Add(new Track(fullPath));
+                    }
+                }
+            }
+        }
+
+        /// <summary>
+        /// selects an random track
+        /// </summary>
+        public void SelectRandomTrack()
+        {
+            // select random track
+            var index = new Random().Next(0, Tracklist.Count - 1);
+            SelectedTrack = Tracklist[index];
         }
     }
 }

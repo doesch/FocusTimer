@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace FocusTimer.Views
 {
-    public partial class Stats : BaseView
+    public partial class Start : BaseView
     {
-        public Stats()
+        public Start()
         {
             InitializeComponent();
         }
@@ -20,6 +20,16 @@ namespace FocusTimer.Views
         private void bttnStartFocusTime_Click(object sender, EventArgs e)
         {
             this.ChangeView(ViewsEnum.KeepFocus);
+        }
+
+        private void linkLabelSettings_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.ChangeView(ViewsEnum.Settings);
+        }
+
+        private void labelMainText_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

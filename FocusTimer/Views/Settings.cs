@@ -38,14 +38,11 @@ namespace FocusTimer
         /// <exception cref="NotImplementedException"></exception>
         private void Init()
         {
-            // apply path to music files from settings
-            var fullPathToMusicFiles = SettingsFile.Default.FullPathToMusicFiles;
-
             // apply start time for focus time from settings
             inputTime.Value = SettingsFile.Default.StartValue;
 
-            // load music files
-            LoadMusicFiles(fullPathToMusicFiles);
+            // Render datagrid
+            RenderPlayList();
         }
 
         /// <summary>
@@ -82,7 +79,8 @@ namespace FocusTimer
 
                 if (result == DialogResult.OK && !string.IsNullOrWhiteSpace(fbd.SelectedPath))
                 {
-                    LoadMusicFiles(fbd.SelectedPath);
+                    m_Player.LoadPlaylist(fbd.SelectedPath);
+                    RenderPlayList();
                 }
 
                 // cache selected folder
@@ -95,38 +93,32 @@ namespace FocusTimer
         /// Load the music files into the grid and player
         /// </summary>
         /// <param name="pPath"></param>
-        private void LoadMusicFiles(string pPath)
+        private void RenderPlayList()
         {
-            if (pPath != null && Directory.Exists(pPath))
+            // bind data to the grid
+            dataGridViewPlayList.DataSource = m_Player.Tracklist;
+
+            // size column width 
+            dataGridViewPlayList.AutoResizeColumns();
+
+            // apply selection changed Event
+            dataGridViewPlayList.CellClick += new DataGridViewCellEventHandler(OnTrackSelected);
+
+            // mark current selected track in grid
+            if (m_Player.SelectedTrack != null)
             {
-                string[] files = Directory.GetFiles(pPath);
-
-                // clear list
-                m_Player.Tracklist.Clear();
-
-                // add files to tracklist
-                foreach (var fullPath in files)
+                for (int i = 0; i < dataGridViewPlayList.Rows.Count; i++)
                 {
-                    if (fullPath.EndsWith("mp3")) // filter supported file types
+                    var track = (ITrack)dataGridViewPlayList.Rows[i].DataBoundItem;
+                    if (track.FullPath == m_Player.SelectedTrack.FullPath)
                     {
-                        m_Player.Tracklist.Add(new Track(fullPath));
+                        dataGridViewPlayList.Rows[i].Selected = true;
+                        dataGridViewPlayList.Rows[i].Cells[0].Selected = true;
+
+                        break;
                     }
                 }
-
-                // bind data to the grid
-                dataGridViewPlayList.DataSource = m_Player.Tracklist;
-
-                // size column width 
-                dataGridViewPlayList.AutoResizeColumns();
-
-                // apply selection changed Event
-                dataGridViewPlayList.CellClick += new DataGridViewCellEventHandler(OnTrackSelected);
-
-                // select random track
-                var rowIndex = new Random().Next(0, dataGridViewPlayList.RowCount - 1);
-                dataGridViewPlayList.Rows[rowIndex].Cells[0].Selected = true;
-                OnTrackSelected(dataGridViewPlayList, null);                
-            }
+            } 
         }
 
         /// <summary>

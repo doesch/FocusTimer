@@ -11,6 +11,7 @@ namespace FocusTimer.Views
     /// </summary>
     public enum ViewsEnum
     {
+        Start,
         Settings,
         KeepFocus,
         End,

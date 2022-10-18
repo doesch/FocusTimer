@@ -118,7 +118,7 @@ namespace FocusTimer
             this.m_Timer.Stop();
 
             // go to settings view
-            this.ChangeView(ViewsEnum.Settings);
+            this.ChangeView(ViewsEnum.Start);
         }
 
         /// <summary>

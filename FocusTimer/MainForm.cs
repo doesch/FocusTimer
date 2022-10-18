@@ -22,8 +22,21 @@ namespace FocusTimer
 
         private void Init()
         {
+            // apply start time for focus time from settings
+            m_Timer.StartValue = SettingsFile.Default.StartValue;
+
+            // load playlist
+            var path = SettingsFile.Default.FullPathToMusicFiles;
+            if (!String.IsNullOrWhiteSpace(path) && Directory.Exists(path))
+            {
+                m_Player.LoadPlaylist(path);
+            }
+
+            // select random track in player
+            m_Player.SelectRandomTrack();
+
             // load init view
-            LoadView(ViewsEnum.Settings);            
+            LoadView(ViewsEnum.Start);            
         }
 
         /// <summary>
@@ -37,6 +50,9 @@ namespace FocusTimer
             /// convert enum into view
             switch (pView)
             {
+                case ViewsEnum.Start:
+                    view = new Start();
+                    break;
                 case ViewsEnum.Settings:
                     view = new Settings(m_Timer, m_Player);
                     break;
@@ -57,7 +73,7 @@ namespace FocusTimer
                     view = new Break(new BreakTimer());
                     break;
                 case ViewsEnum.Stats:
-                    view = new Stats();
+                    view = new Start();
                     break;
                 default:
                     view = new Settings(m_Timer, m_Player);
