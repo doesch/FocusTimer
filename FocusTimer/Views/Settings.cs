@@ -95,11 +95,11 @@ namespace FocusTimer
         /// <param name="pPath"></param>
         private void RenderPlayList()
         {
+            //  clear datasource
+            dataGridViewPlayList.DataSource = null;
+
             // bind data to the grid
             dataGridViewPlayList.DataSource = m_Player.Tracklist;
-
-            // size column width 
-            dataGridViewPlayList.AutoResizeColumns();
 
             // apply selection changed Event
             dataGridViewPlayList.CellClick += new DataGridViewCellEventHandler(OnTrackSelected);
