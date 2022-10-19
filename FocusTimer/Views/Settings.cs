@@ -52,6 +52,17 @@ namespace FocusTimer
         /// <param name="e"></param>
         private void bttnStart_Click(object sender, EventArgs e)
         {
+            SaveChanges();
+
+            // change view
+            ChangeView(ViewsEnum.KeepFocus);
+        }
+
+        /// <summary>
+        /// save the changes
+        /// </summary>
+        private void SaveChanges()
+        {
             var startValue = (int)inputTime.Value;
 
             // apply start value
@@ -60,9 +71,6 @@ namespace FocusTimer
             // save selected time in settings
             SettingsFile.Default.StartValue = startValue;
             SettingsFile.Default.Save();
-
-            // change view
-            ChangeView(ViewsEnum.KeepFocus);
         }
 
         /// <summary>
@@ -145,6 +153,8 @@ namespace FocusTimer
 
         private void linkLabelStart_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            SaveChanges();
+
             ChangeView(ViewsEnum.Start);
         }
     }
