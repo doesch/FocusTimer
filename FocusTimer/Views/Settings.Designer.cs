@@ -51,12 +51,16 @@
             // 
             // bttnStart
             // 
+            this.bttnStart.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.bttnStart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bttnStart.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.bttnStart.ForeColor = System.Drawing.Color.White;
             this.bttnStart.Location = new System.Drawing.Point(3, 427);
             this.bttnStart.Name = "bttnStart";
             this.bttnStart.Size = new System.Drawing.Size(254, 50);
             this.bttnStart.TabIndex = 0;
             this.bttnStart.Text = "Start Focus Time";
-            this.bttnStart.UseVisualStyleBackColor = true;
+            this.bttnStart.UseVisualStyleBackColor = false;
             this.bttnStart.Click += new System.EventHandler(this.bttnStart_Click);
             // 
             // inputTime
@@ -98,7 +102,7 @@
             this.dataGridViewPlayList.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridViewPlayList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewPlayList.ColumnHeadersVisible = false;
-            this.dataGridViewPlayList.GridColor = System.Drawing.SystemColors.ControlLightLight;
+            this.dataGridViewPlayList.GridColor = System.Drawing.Color.White;
             this.dataGridViewPlayList.Location = new System.Drawing.Point(3, 76);
             this.dataGridViewPlayList.MultiSelect = false;
             this.dataGridViewPlayList.Name = "dataGridViewPlayList";
@@ -148,6 +152,7 @@
             // 
             // Settings
             // 
+            this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.linkLabelStart);
             this.Controls.Add(this.bttnSelectDirectory);
             this.Controls.Add(this.labelFocusTimeMinutes);

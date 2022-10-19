@@ -41,12 +41,16 @@
             // 
             // BttnStop
             // 
+            this.BttnStop.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.BttnStop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BttnStop.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.BttnStop.ForeColor = System.Drawing.Color.White;
             this.BttnStop.Location = new System.Drawing.Point(3, 427);
             this.BttnStop.Name = "BttnStop";
             this.BttnStop.Size = new System.Drawing.Size(254, 50);
             this.BttnStop.TabIndex = 0;
             this.BttnStop.Text = "Stop";
-            this.BttnStop.UseVisualStyleBackColor = true;
+            this.BttnStop.UseVisualStyleBackColor = false;
             this.BttnStop.Click += new System.EventHandler(this.BttnStop_Click);
             // 
             // labelCurrentTime
@@ -102,6 +106,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Window;
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBoxMain);
             this.Controls.Add(this.linkLabelBreak);

@@ -39,12 +39,16 @@
             // 
             // bttnStartBreak
             // 
+            this.bttnStartBreak.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.bttnStartBreak.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bttnStartBreak.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.bttnStartBreak.ForeColor = System.Drawing.Color.White;
             this.bttnStartBreak.Location = new System.Drawing.Point(3, 427);
             this.bttnStartBreak.Name = "bttnStartBreak";
             this.bttnStartBreak.Size = new System.Drawing.Size(254, 50);
             this.bttnStartBreak.TabIndex = 0;
             this.bttnStartBreak.Text = "Take a Break";
-            this.bttnStartBreak.UseVisualStyleBackColor = true;
+            this.bttnStartBreak.UseVisualStyleBackColor = false;
             this.bttnStartBreak.Click += new System.EventHandler(this.bttnStartBreak_Click);
             // 
             // labelMainText
@@ -69,12 +73,16 @@
             // 
             // bttnContinueFocusTime
             // 
+            this.bttnContinueFocusTime.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.bttnContinueFocusTime.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bttnContinueFocusTime.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.bttnContinueFocusTime.ForeColor = System.Drawing.Color.Black;
             this.bttnContinueFocusTime.Location = new System.Drawing.Point(80, 215);
             this.bttnContinueFocusTime.Name = "bttnContinueFocusTime";
             this.bttnContinueFocusTime.Size = new System.Drawing.Size(98, 30);
             this.bttnContinueFocusTime.TabIndex = 3;
             this.bttnContinueFocusTime.Text = "+5 Minutes";
-            this.bttnContinueFocusTime.UseVisualStyleBackColor = true;
+            this.bttnContinueFocusTime.UseVisualStyleBackColor = false;
             this.bttnContinueFocusTime.Click += new System.EventHandler(this.bttnContinueFocusTime_Click);
             // 
             // pictureBoxMain
@@ -92,6 +100,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.pictureBoxMain);
             this.Controls.Add(this.bttnContinueFocusTime);
             this.Controls.Add(this.linkLabelStartPage);

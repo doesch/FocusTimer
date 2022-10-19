@@ -39,12 +39,16 @@
             // 
             // bttnStartFocusTime
             // 
+            this.bttnStartFocusTime.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.bttnStartFocusTime.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bttnStartFocusTime.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.bttnStartFocusTime.ForeColor = System.Drawing.Color.White;
             this.bttnStartFocusTime.Location = new System.Drawing.Point(3, 427);
             this.bttnStartFocusTime.Name = "bttnStartFocusTime";
             this.bttnStartFocusTime.Size = new System.Drawing.Size(254, 50);
             this.bttnStartFocusTime.TabIndex = 0;
             this.bttnStartFocusTime.Text = "Start Focus Time";
-            this.bttnStartFocusTime.UseVisualStyleBackColor = true;
+            this.bttnStartFocusTime.UseVisualStyleBackColor = false;
             this.bttnStartFocusTime.Click += new System.EventHandler(this.bttnStartFocusTime_Click);
             // 
             // labelCurrentTime
@@ -94,6 +98,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBoxMain);
             this.Controls.Add(this.linkLabelStart);
