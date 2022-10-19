@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FocusTimer.Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,23 @@ namespace FocusTimer.Views
 {
     public partial class Start : BaseView
     {
-        public Start()
+        private IJsonFile m_JsonFile;
+
+        public Start(IJsonFile pJsonFile)
         {
+            m_JsonFile = pJsonFile;
             InitializeComponent();
+            Init();
+        }
+
+        /// <summary>
+        /// init view
+        /// </summary>
+        /// <exception cref="NotImplementedException"></exception>
+        private void Init()
+        {
+            // display statistic
+            labelCurrentTime.Text = m_JsonFile.Statistics.CurrentDay.FocusTime.ToString(Constants.cDisplayTimeFormat);
         }
 
         private void bttnStartFocusTime_Click(object sender, EventArgs e)

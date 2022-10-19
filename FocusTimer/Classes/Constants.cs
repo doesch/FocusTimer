@@ -14,6 +14,11 @@ namespace FocusTimer.Classes
         /// <summary>
         /// The displayed timeformat 
         /// </summary>
-        public const string DisplayTimeFormat = "hh\\:mm\\:ss";
+        public const string cDisplayTimeFormat = "hh\\:mm\\:ss";
+
+        /// <summary>
+        /// The path to the 
+        /// </summary>
+        public static readonly string FullPathToJsonFile = Path.Combine(Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location), "Database", "database.json");
     }
 }

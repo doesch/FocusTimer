@@ -19,16 +19,18 @@ namespace FocusTimer
     {
         private IFocusTimer m_Timer;
         private IPlayer m_Player;
+        private IJsonFile m_JsonFile; // statistics
 
         /// <summary>
         /// run focus time
         /// </summary>
         /// <param name="pTime"></param>
         /// <param name="pSelectedTrack"></param>
-        public KeepFocus(IFocusTimer pTimer, IPlayer pPlayer)
+        public KeepFocus(IFocusTimer pTimer, IPlayer pPlayer, IJsonFile pJsonFile)
         {
             m_Timer = pTimer;
             m_Player = pPlayer;
+            m_JsonFile = pJsonFile;
             InitializeComponent();
 
             Init();
@@ -65,6 +67,22 @@ namespace FocusTimer
 
             // use invoker for threads
             RenderTime(timer);
+
+            // save stats
+            SaveStats(timer);
+        }
+
+        /// <summary>
+        /// Save statistics
+        /// </summary>
+        private void SaveStats(IFocusTimer pFocusTimer)
+        {
+            if (pFocusTimer.CurrentTime.Seconds == 0)
+            {
+                // Save every minute of focus time
+                m_JsonFile.Statistics.CurrentDay.FocusTime += TimeSpan.FromMinutes(1);
+                m_JsonFile.Export();
+            }
         }
 
         /// <summary>
@@ -95,12 +113,12 @@ namespace FocusTimer
             {
                 this.Invoke(new MethodInvoker(delegate ()
                 {
-                    labelCurrentTime.Text = pTimer.CurrentTime.ToString(Constants.DisplayTimeFormat);
+                    labelCurrentTime.Text = pTimer.CurrentTime.ToString(Constants.cDisplayTimeFormat);
                 }));
             }
             else
             {
-                labelCurrentTime.Text = pTimer.CurrentTime.ToString(Constants.DisplayTimeFormat);
+                labelCurrentTime.Text = pTimer.CurrentTime.ToString(Constants.cDisplayTimeFormat);
             }
         }
 

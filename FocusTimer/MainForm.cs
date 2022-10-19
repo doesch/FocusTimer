@@ -13,6 +13,7 @@ namespace FocusTimer
         /// </summary>
         private static IFocusTimer m_Timer = new Classes.FocusTimer();
         private static IPlayer m_Player = new Player();
+        private static IJsonFile m_JsonFile = new JsonFile();
 
         public MainForm()
         {
@@ -22,6 +23,9 @@ namespace FocusTimer
 
         private void Init()
         {
+            // Load the database
+            m_JsonFile.Import();
+
             // apply start time for focus time from settings
             m_Timer.StartValue = SettingsFile.Default.StartValue;
 
@@ -48,13 +52,13 @@ namespace FocusTimer
             switch (pView)
             {
                 case ViewsEnum.Start:
-                    view = new Start();
+                    view = new Start(m_JsonFile);
                     break;
                 case ViewsEnum.Settings:
                     view = new Settings(m_Timer, m_Player);
                     break;
                 case ViewsEnum.KeepFocus:
-                    view = new KeepFocus(m_Timer, m_Player);
+                    view = new KeepFocus(m_Timer, m_Player, m_JsonFile);
                     // minimize window
                     this.WindowState = FormWindowState.Minimized;
                     break;
@@ -70,7 +74,7 @@ namespace FocusTimer
                     view = new Break(new BreakTimer());
                     break;
                 case ViewsEnum.Stats:
-                    view = new Start();
+                    view = new Start(m_JsonFile);
                     break;
                 default:
                     view = new Settings(m_Timer, m_Player);

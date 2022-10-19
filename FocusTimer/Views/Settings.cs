@@ -113,7 +113,11 @@ namespace FocusTimer
 
                     // select or deselect
                     dataGridViewPlayList.Rows[i].Selected = track.FullPath == m_Player.SelectedTrack.FullPath; // row
-                    dataGridViewPlayList.Rows[i].Cells[0].Selected = track.FullPath == m_Player.SelectedTrack.FullPath; // cell
+
+                    if (dataGridViewPlayList.Rows[i].Cells.Count > 0) // I don´t know why I need this check.
+                    {
+                        dataGridViewPlayList.Rows[i].Cells[0].Selected = track.FullPath == m_Player.SelectedTrack.FullPath; // cell
+                    }                
                 }
             } 
         }

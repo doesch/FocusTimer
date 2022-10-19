@@ -75,7 +75,7 @@
             this.labelMainText.Name = "labelMainText";
             this.labelMainText.Size = new System.Drawing.Size(251, 23);
             this.labelMainText.TabIndex = 9;
-            this.labelMainText.Text = "Your total Focus Time Today is:";
+            this.labelMainText.Text = "Your total Focus Time today is:";
             this.labelMainText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.labelMainText.Click += new System.EventHandler(this.labelMainText_Click);
             // 
