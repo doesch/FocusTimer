@@ -95,7 +95,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(251, 23);
             this.label1.TabIndex = 7;
-            this.label1.Text = "Stay Focused!";
+            this.label1.Text = "Stay focused!";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // KeepFocus

@@ -53,7 +53,7 @@
             this.labelMainText.Name = "labelMainText";
             this.labelMainText.Size = new System.Drawing.Size(251, 23);
             this.labelMainText.TabIndex = 1;
-            this.labelMainText.Text = "Your Focus Time is finished.";
+            this.labelMainText.Text = "Your focus time is finished.";
             this.labelMainText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // linkLabelStartPage

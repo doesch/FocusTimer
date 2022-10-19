@@ -72,7 +72,7 @@ namespace FocusTimer
                     }                    
                     break;
                 case ViewsEnum.Break:
-                    view = new Break(new BreakTimer());
+                    view = new Break(new BreakTimer(), m_JsonFile);
                     break;
                 default:
                     view = new Start(m_JsonFile);

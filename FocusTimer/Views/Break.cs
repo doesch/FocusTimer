@@ -14,10 +14,12 @@ namespace FocusTimer.Views
     public partial class Break : BaseView
     {
         IBreakTimer m_BreakTimer;
+        private IJsonFile m_JsonFile; // statistics
 
-        public Break(IBreakTimer pBreakTimer)
+        public Break(IBreakTimer pBreakTimer, IJsonFile pJsonFile)
         {
             m_BreakTimer = pBreakTimer;
+            m_JsonFile = pJsonFile;
             InitializeComponent();
 
             Init();
@@ -50,6 +52,23 @@ namespace FocusTimer.Views
 
             // use invoker for threads
             RenderTime(timer);
+
+            // save stats
+            SaveStats(timer);
+        }
+
+        /// <summary>
+        /// Save statistics
+        /// </summary>
+        /// <param name="pBreakTimer"></param>
+        private void SaveStats(IBreakTimer pBreakTimer)
+        {
+            if (pBreakTimer.CurrentTime.Seconds == 0)
+            {
+                // Save every minute of focus time
+                m_JsonFile.Statistics.CurrentDay.BreakTime += TimeSpan.FromMinutes(1);
+                m_JsonFile.Export();
+            }
         }
 
         /// <summary>
