@@ -32,9 +32,6 @@ namespace FocusTimer
                 m_Player.LoadPlaylist(path);
             }
 
-            // select random track in player
-            m_Player.SelectRandomTrack();
-
             // load init view
             LoadView(ViewsEnum.Start);            
         }

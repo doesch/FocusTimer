@@ -110,13 +110,11 @@ namespace FocusTimer
                 for (int i = 0; i < dataGridViewPlayList.Rows.Count; i++)
                 {
                     var track = (ITrack)dataGridViewPlayList.Rows[i].DataBoundItem;
-                    if (track.FullPath == m_Player.SelectedTrack.FullPath)
-                    {
-                        dataGridViewPlayList.Rows[i].Selected = true;
-                        dataGridViewPlayList.Rows[i].Cells[0].Selected = true;
 
-                        break;
-                    }
+                    // select or deselect
+                    dataGridViewPlayList.Rows[i].Selected = track.FullPath == m_Player.SelectedTrack.FullPath;
+                    dataGridViewPlayList.Rows[i].Cells[0].Selected = track.FullPath == m_Player.SelectedTrack.FullPath;
+
                 }
             } 
         }

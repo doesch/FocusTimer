@@ -123,6 +123,8 @@ namespace FocusTimer.Classes
                     }
                 }
             }
+
+            SelectRandomTrack();
         }
 
         /// <summary>
@@ -131,8 +133,19 @@ namespace FocusTimer.Classes
         public void SelectRandomTrack()
         {
             // select random track
-            var index = new Random().Next(0, Tracklist.Count - 1);
-            SelectedTrack = Tracklist[index];
+            if (Tracklist.Count > 1)
+            {
+                var index = new Random().Next(0, Tracklist.Count - 1);
+                SelectedTrack = Tracklist[index];
+            }
+            else if (Tracklist.Count == 1)
+            {
+                SelectedTrack = Tracklist[0];
+            }
+            else
+            {
+                SelectedTrack = null;
+            }
         }
     }
 }
