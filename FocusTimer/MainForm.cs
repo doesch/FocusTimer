@@ -1,5 +1,6 @@
 using FocusTimer.Classes;
 using FocusTimer.Views;
+using System.Reflection;
 
 namespace FocusTimer
 {
