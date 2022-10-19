@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Start));
             this.bttnStartFocusTime = new System.Windows.Forms.Button();
-            this.linkLabelSettings = new System.Windows.Forms.LinkLabel();
+            this.linkLabelStart = new System.Windows.Forms.LinkLabel();
             this.pictureBoxMain = new System.Windows.Forms.PictureBox();
             this.labelMainText = new System.Windows.Forms.Label();
             this.labelCurrentTime = new System.Windows.Forms.Label();
@@ -47,16 +47,16 @@
             this.bttnStartFocusTime.UseVisualStyleBackColor = true;
             this.bttnStartFocusTime.Click += new System.EventHandler(this.bttnStartFocusTime_Click);
             // 
-            // linkLabelSettings
+            // linkLabelStart
             // 
-            this.linkLabelSettings.Location = new System.Drawing.Point(3, 401);
-            this.linkLabelSettings.Name = "linkLabelSettings";
-            this.linkLabelSettings.Size = new System.Drawing.Size(254, 23);
-            this.linkLabelSettings.TabIndex = 3;
-            this.linkLabelSettings.TabStop = true;
-            this.linkLabelSettings.Text = "Go to Settings >";
-            this.linkLabelSettings.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.linkLabelSettings.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelSettings_LinkClicked);
+            this.linkLabelStart.Location = new System.Drawing.Point(3, 401);
+            this.linkLabelStart.Name = "linkLabelStart";
+            this.linkLabelStart.Size = new System.Drawing.Size(254, 23);
+            this.linkLabelStart.TabIndex = 3;
+            this.linkLabelStart.TabStop = true;
+            this.linkLabelStart.Text = "Settings";
+            this.linkLabelStart.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.linkLabelStart.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelStart_LinkClicked);
             // 
             // pictureBoxMain
             // 
@@ -98,7 +98,7 @@
             this.Controls.Add(this.labelCurrentTime);
             this.Controls.Add(this.labelMainText);
             this.Controls.Add(this.pictureBoxMain);
-            this.Controls.Add(this.linkLabelSettings);
+            this.Controls.Add(this.linkLabelStart);
             this.Controls.Add(this.bttnStartFocusTime);
             this.Name = "Start";
             this.Size = new System.Drawing.Size(260, 480);
@@ -110,7 +110,7 @@
         #endregion
 
         private Button bttnStartFocusTime;
-        private LinkLabel linkLabelSettings;
+        private LinkLabel linkLabelStart;
         private PictureBox pictureBoxMain;
         private Label labelMainText;
         private Label labelCurrentTime;

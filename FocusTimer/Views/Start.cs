@@ -37,14 +37,15 @@ namespace FocusTimer.Views
             this.ChangeView(ViewsEnum.KeepFocus);
         }
 
-        private void linkLabelSettings_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            this.ChangeView(ViewsEnum.Settings);
-        }
 
         private void labelMainText_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void linkLabelStart_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.ChangeView(ViewsEnum.Settings);
         }
     }
 }

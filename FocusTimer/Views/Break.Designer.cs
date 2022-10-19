@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Break));
             this.bttnStartFocusTime = new System.Windows.Forms.Button();
             this.labelCurrentTime = new System.Windows.Forms.Label();
-            this.linkLabelSettings = new System.Windows.Forms.LinkLabel();
+            this.linkLabelStart = new System.Windows.Forms.LinkLabel();
             this.pictureBoxMain = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMain)).BeginInit();
@@ -59,16 +59,16 @@
             this.labelCurrentTime.Text = "----";
             this.labelCurrentTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // linkLabelSettings
+            // linkLabelStart
             // 
-            this.linkLabelSettings.Location = new System.Drawing.Point(3, 401);
-            this.linkLabelSettings.Name = "linkLabelSettings";
-            this.linkLabelSettings.Size = new System.Drawing.Size(254, 23);
-            this.linkLabelSettings.TabIndex = 3;
-            this.linkLabelSettings.TabStop = true;
-            this.linkLabelSettings.Text = "Go to Settings >";
-            this.linkLabelSettings.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.linkLabelSettings.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelSettings_LinkClicked);
+            this.linkLabelStart.Location = new System.Drawing.Point(3, 401);
+            this.linkLabelStart.Name = "linkLabelStart";
+            this.linkLabelStart.Size = new System.Drawing.Size(254, 23);
+            this.linkLabelStart.TabIndex = 3;
+            this.linkLabelStart.TabStop = true;
+            this.linkLabelStart.Text = "Start Page";
+            this.linkLabelStart.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.linkLabelStart.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelStart_LinkClicked);
             // 
             // pictureBoxMain
             // 
@@ -96,7 +96,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBoxMain);
-            this.Controls.Add(this.linkLabelSettings);
+            this.Controls.Add(this.linkLabelStart);
             this.Controls.Add(this.labelCurrentTime);
             this.Controls.Add(this.bttnStartFocusTime);
             this.Name = "Break";
@@ -110,7 +110,7 @@
 
         private Button bttnStartFocusTime;
         private Label labelCurrentTime;
-        private LinkLabel linkLabelSettings;
+        private LinkLabel linkLabelStart;
         private PictureBox pictureBoxMain;
         private Label label1;
     }

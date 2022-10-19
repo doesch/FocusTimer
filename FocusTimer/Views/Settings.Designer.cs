@@ -35,6 +35,7 @@
             this.labelPlayList = new System.Windows.Forms.Label();
             this.labelFocusTimeMinutes = new System.Windows.Forms.Label();
             this.bttnSelectDirectory = new System.Windows.Forms.Button();
+            this.linkLabelStart = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.inputTime)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPlayList)).BeginInit();
             this.SuspendLayout();
@@ -54,7 +55,7 @@
             this.bttnStart.Name = "bttnStart";
             this.bttnStart.Size = new System.Drawing.Size(254, 50);
             this.bttnStart.TabIndex = 0;
-            this.bttnStart.Text = "Start";
+            this.bttnStart.Text = "Start Focus Time";
             this.bttnStart.UseVisualStyleBackColor = true;
             this.bttnStart.Click += new System.EventHandler(this.bttnStart_Click);
             // 
@@ -103,7 +104,7 @@
             this.dataGridViewPlayList.Name = "dataGridViewPlayList";
             this.dataGridViewPlayList.RowHeadersVisible = false;
             this.dataGridViewPlayList.RowTemplate.Height = 25;
-            this.dataGridViewPlayList.Size = new System.Drawing.Size(254, 345);
+            this.dataGridViewPlayList.Size = new System.Drawing.Size(254, 322);
             this.dataGridViewPlayList.TabIndex = 2;
             // 
             // labelPlayList
@@ -134,8 +135,20 @@
             this.bttnSelectDirectory.UseVisualStyleBackColor = true;
             this.bttnSelectDirectory.Click += new System.EventHandler(this.bttnSelectDirectory_Click);
             // 
+            // linkLabelStart
+            // 
+            this.linkLabelStart.Location = new System.Drawing.Point(3, 401);
+            this.linkLabelStart.Name = "linkLabelStart";
+            this.linkLabelStart.Size = new System.Drawing.Size(254, 23);
+            this.linkLabelStart.TabIndex = 7;
+            this.linkLabelStart.TabStop = true;
+            this.linkLabelStart.Text = "Start Page";
+            this.linkLabelStart.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.linkLabelStart.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelStart_LinkClicked);
+            // 
             // Settings
             // 
+            this.Controls.Add(this.linkLabelStart);
             this.Controls.Add(this.bttnSelectDirectory);
             this.Controls.Add(this.labelFocusTimeMinutes);
             this.Controls.Add(this.labelPlayList);
@@ -160,5 +173,6 @@
         private Label labelPlayList;
         private Label labelFocusTimeMinutes;
         private Button bttnSelectDirectory;
+        private LinkLabel linkLabelStart;
     }
 }

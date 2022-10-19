@@ -47,16 +47,11 @@ namespace FocusTimer.Views
             this.ChangeView(ViewsEnum.KeepFocus);
         }
 
-        /// <summary>
-        /// Go to the settings
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void linkLabelSettings_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void linkLabelStartPage_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             m_Player.Pause();
 
-            this.ChangeView(ViewsEnum.Settings);
+            this.ChangeView(ViewsEnum.Start);
         }
     }
 }

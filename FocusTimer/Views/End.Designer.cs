@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(End));
             this.bttnStartBreak = new System.Windows.Forms.Button();
             this.labelMainText = new System.Windows.Forms.Label();
-            this.linkLabelSettings = new System.Windows.Forms.LinkLabel();
+            this.linkLabelStartPage = new System.Windows.Forms.LinkLabel();
             this.bttnContinueFocusTime = new System.Windows.Forms.Button();
             this.pictureBoxMain = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMain)).BeginInit();
@@ -43,7 +43,7 @@
             this.bttnStartBreak.Name = "bttnStartBreak";
             this.bttnStartBreak.Size = new System.Drawing.Size(254, 50);
             this.bttnStartBreak.TabIndex = 0;
-            this.bttnStartBreak.Text = "Start Break";
+            this.bttnStartBreak.Text = "Take a Break";
             this.bttnStartBreak.UseVisualStyleBackColor = true;
             this.bttnStartBreak.Click += new System.EventHandler(this.bttnStartBreak_Click);
             // 
@@ -56,16 +56,16 @@
             this.labelMainText.Text = "Your Focus Time is finished.";
             this.labelMainText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // linkLabelSettings
+            // linkLabelStartPage
             // 
-            this.linkLabelSettings.Location = new System.Drawing.Point(3, 401);
-            this.linkLabelSettings.Name = "linkLabelSettings";
-            this.linkLabelSettings.Size = new System.Drawing.Size(254, 23);
-            this.linkLabelSettings.TabIndex = 2;
-            this.linkLabelSettings.TabStop = true;
-            this.linkLabelSettings.Text = "Go to Settings >";
-            this.linkLabelSettings.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.linkLabelSettings.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelSettings_LinkClicked);
+            this.linkLabelStartPage.Location = new System.Drawing.Point(3, 401);
+            this.linkLabelStartPage.Name = "linkLabelStartPage";
+            this.linkLabelStartPage.Size = new System.Drawing.Size(254, 23);
+            this.linkLabelStartPage.TabIndex = 2;
+            this.linkLabelStartPage.TabStop = true;
+            this.linkLabelStartPage.Text = "Start Page";
+            this.linkLabelStartPage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.linkLabelStartPage.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelStartPage_LinkClicked);
             // 
             // bttnContinueFocusTime
             // 
@@ -94,7 +94,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.pictureBoxMain);
             this.Controls.Add(this.bttnContinueFocusTime);
-            this.Controls.Add(this.linkLabelSettings);
+            this.Controls.Add(this.linkLabelStartPage);
             this.Controls.Add(this.labelMainText);
             this.Controls.Add(this.bttnStartBreak);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -109,7 +109,7 @@
 
         private Button bttnStartBreak;
         private Label labelMainText;
-        private LinkLabel linkLabelSettings;
+        private LinkLabel linkLabelStartPage;
         private Button bttnContinueFocusTime;
         private PictureBox pictureBoxMain;
     }

@@ -142,5 +142,10 @@ namespace FocusTimer
                 m_Player.SelectedTrack = (Track)dataGridView.Rows[rowIndex].DataBoundItem;
             }
         }
+
+        private void linkLabelStart_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            ChangeView(ViewsEnum.Start);
+        }
     }
 }

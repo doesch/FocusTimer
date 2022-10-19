@@ -81,14 +81,9 @@ namespace FocusTimer.Views
             this.ChangeView(ViewsEnum.KeepFocus);
         }
 
-        /// <summary>
-        /// User wants to go to the settings
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void linkLabelSettings_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void linkLabelStart_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            this.ChangeView(ViewsEnum.Settings);
+            this.ChangeView(ViewsEnum.Start);
         }
     }
 }
