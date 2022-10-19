@@ -116,5 +116,41 @@ namespace FocusTimer
             var viewBase = (BaseView)sender;
             LoadView(viewBase.NextView);
         }
+
+        /// <summary>
+        /// When window is closing
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void OnFormClosing(object sender, FormClosingEventArgs e)
+        {
+            // save window position
+            SettingsFile.Default.WindowLocation = Location;
+            SettingsFile.Default.Save();
+        }
+
+        /// <summary>
+        /// When form is loading
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void OnLoad(object sender, EventArgs e)
+        {
+            // set window to latest position
+
+            var location = SettingsFile.Default.WindowLocation;
+
+            // when window is out of screenview, then put window into screenview
+            if (location.X < 0 || location.Y < 0)
+            {
+                // put window into sceen position
+                this.StartPosition = FormStartPosition.Manual;
+                this.Location = new Point(0, 0);
+            }
+            else
+            {
+                Location = location;
+            }
+        }
     }
 }
