@@ -88,8 +88,16 @@
             // 
             // dataGridViewPlayList
             // 
+            this.dataGridViewPlayList.AllowUserToAddRows = false;
+            this.dataGridViewPlayList.AllowUserToDeleteRows = false;
+            this.dataGridViewPlayList.AllowUserToResizeColumns = false;
+            this.dataGridViewPlayList.AllowUserToResizeRows = false;
             this.dataGridViewPlayList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridViewPlayList.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.dataGridViewPlayList.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridViewPlayList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewPlayList.ColumnHeadersVisible = false;
+            this.dataGridViewPlayList.GridColor = System.Drawing.SystemColors.ControlLightLight;
             this.dataGridViewPlayList.Location = new System.Drawing.Point(3, 76);
             this.dataGridViewPlayList.MultiSelect = false;
             this.dataGridViewPlayList.Name = "dataGridViewPlayList";
