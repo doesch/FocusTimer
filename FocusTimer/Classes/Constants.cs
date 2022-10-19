@@ -19,6 +19,13 @@ namespace FocusTimer.Classes
         /// <summary>
         /// The path to the 
         /// </summary>
-        public static readonly string FullPathToJsonFile = Path.Combine(Application.LocalUserAppDataPath, "database.json");
+
+#if RELEASE
+        private const string cDatabaseFileName = "database.json";
+#else
+        private const string cDatabaseFileName = "database.debug.json";
+#endif
+
+        public static readonly string FullPathToJsonFile = Path.Combine(Application.LocalUserAppDataPath, cDatabaseFileName);
     }
 }
