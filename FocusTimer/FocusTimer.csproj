@@ -6,11 +6,11 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
-    <ApplicationIcon>Images\timer-clock-svgrepo-com.ico</ApplicationIcon>
+    <ApplicationIcon>Images\timer-blue_.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="Images\timer-clock-svgrepo-com.ico" />
+    <Content Include="Images\timer-blue_.ico" />
   </ItemGroup>
 
   <ItemGroup>
