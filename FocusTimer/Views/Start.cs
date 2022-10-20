@@ -14,12 +14,14 @@ namespace FocusTimer.Views
     public partial class Start : BaseView
     {
         private IJsonFile m_JsonFile;
+        private IFocusTimer m_Timer;
 
-        public Start(IJsonFile pJsonFile)
+        public Start(IJsonFile pJsonFile, IFocusTimer timer)
         {
             m_JsonFile = pJsonFile;
+            m_Timer = timer;
             InitializeComponent();
-            Init();
+            Init();            
         }
 
         /// <summary>
@@ -34,6 +36,8 @@ namespace FocusTimer.Views
 
         private void bttnStartFocusTime_Click(object sender, EventArgs e)
         {
+            // apply start time for focus time from settings
+            m_Timer.StartValue = SettingsFile.Default.StartValue;
             this.ChangeView(ViewsEnum.KeepFocus);
         }
 

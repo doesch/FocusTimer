@@ -15,13 +15,14 @@ namespace FocusTimer.Views
     {
         IBreakTimer m_BreakTimer;
         private IJsonFile m_JsonFile; // statistics
+        private IFocusTimer m_Timer;
 
-        public Break(IBreakTimer pBreakTimer, IJsonFile pJsonFile)
+        public Break(IBreakTimer pBreakTimer, IJsonFile pJsonFile, IFocusTimer timer)
         {
             m_BreakTimer = pBreakTimer;
             m_JsonFile = pJsonFile;
+            m_Timer = timer;
             InitializeComponent();
-
             Init();
         }
 
@@ -97,6 +98,9 @@ namespace FocusTimer.Views
         /// <param name="e"></param>
         private void bttnStartFocusTime_Click(object sender, EventArgs e)
         {
+            // apply start time for focus time from settings
+            m_Timer.StartValue = SettingsFile.Default.StartValue;
+
             this.ChangeView(ViewsEnum.KeepFocus);
         }
 

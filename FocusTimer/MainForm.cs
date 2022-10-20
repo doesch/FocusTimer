@@ -27,9 +27,6 @@ namespace FocusTimer
             // Load the database
             m_JsonFile.Import();
 
-            // apply start time for focus time from settings
-            m_Timer.StartValue = SettingsFile.Default.StartValue;
-
             // load playlist
             var path = SettingsFile.Default.FullPathToMusicFiles;
             if (!String.IsNullOrWhiteSpace(path) && Directory.Exists(path))
@@ -53,7 +50,7 @@ namespace FocusTimer
             switch (pView)
             {
                 case ViewsEnum.Start:
-                    view = new Start(m_JsonFile);
+                    view = new Start(m_JsonFile, m_Timer);
                     break;
                 case ViewsEnum.Settings:
                     view = new Settings(m_Timer, m_Player);
@@ -72,10 +69,10 @@ namespace FocusTimer
                     }                    
                     break;
                 case ViewsEnum.Break:
-                    view = new Break(new BreakTimer(), m_JsonFile);
+                    view = new Break(new BreakTimer(), m_JsonFile, m_Timer);
                     break;
                 default:
-                    view = new Start(m_JsonFile);
+                    view = new Start(m_JsonFile, m_Timer);
                     break;
             }
 
