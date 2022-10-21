@@ -26,5 +26,5 @@ jobs:
         uses: dorny/test-reporter@v1.6.0
         with:
           name: test-results
-          path: "FocusTimer.Tests/TestResults/*.xml"
+          path: "FocusTimer.Tests/TestResults/*.trx"
           reporter: dotnet-trx
