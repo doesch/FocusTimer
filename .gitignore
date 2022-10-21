@@ -6,3 +6,4 @@ bin
 .vs
 .svn
 package-lock.json
+*.trx
