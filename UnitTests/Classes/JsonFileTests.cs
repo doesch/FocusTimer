@@ -1,7 +1,7 @@
 using FluentAssertions;
 using FocusTimer.Classes;
 
-namespace UnitTests.Classes
+namespace FocusTimer_Tests.Classes
 {
     public class Tests
     {
