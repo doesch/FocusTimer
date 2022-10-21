@@ -41,7 +41,7 @@
             // 
             this.bttnStartFocusTime.BackColor = System.Drawing.SystemColors.HotTrack;
             this.bttnStartFocusTime.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bttnStartFocusTime.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.bttnStartFocusTime.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.bttnStartFocusTime.ForeColor = System.Drawing.Color.White;
             this.bttnStartFocusTime.Location = new System.Drawing.Point(3, 427);
             this.bttnStartFocusTime.Name = "bttnStartFocusTime";

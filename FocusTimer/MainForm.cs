@@ -24,9 +24,6 @@ namespace FocusTimer
 
         private void Init()
         {
-            // Load the database
-            m_JsonFile.Import();
-
             // load playlist
             var path = SettingsFile.Default.FullPathToMusicFiles;
             if (!String.IsNullOrWhiteSpace(path) && Directory.Exists(path))

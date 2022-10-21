@@ -53,7 +53,7 @@
             // 
             this.bttnStart.BackColor = System.Drawing.SystemColors.HotTrack;
             this.bttnStart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bttnStart.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.bttnStart.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.bttnStart.ForeColor = System.Drawing.Color.White;
             this.bttnStart.Location = new System.Drawing.Point(3, 427);
             this.bttnStart.Name = "bttnStart";

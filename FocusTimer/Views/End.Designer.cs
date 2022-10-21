@@ -41,7 +41,7 @@
             // 
             this.bttnStartBreak.BackColor = System.Drawing.SystemColors.HotTrack;
             this.bttnStartBreak.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bttnStartBreak.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.bttnStartBreak.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.bttnStartBreak.ForeColor = System.Drawing.Color.White;
             this.bttnStartBreak.Location = new System.Drawing.Point(3, 427);
             this.bttnStartBreak.Name = "bttnStartBreak";

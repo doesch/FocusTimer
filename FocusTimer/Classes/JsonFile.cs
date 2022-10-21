@@ -10,7 +10,7 @@ namespace FocusTimer.Classes
     /// <summary>
     /// manages the json file
     /// </summary>
-    internal class JsonFile : IJsonFile
+    public class JsonFile : IJsonFile
     {
         /// <summary>
         /// The statistics in json file
@@ -45,6 +45,10 @@ namespace FocusTimer.Classes
                 // export empty statistics shema
                 Statistics = new  Statistics();
                 Export();
+            }
+            else
+            {
+                Import();
             }
         }
 
