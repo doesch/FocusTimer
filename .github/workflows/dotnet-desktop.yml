@@ -24,3 +24,5 @@ jobs:
         run: dotnet test --no-restore --verbosity normal
       - name: Test Reporter
         uses: dorny/test-reporter@v1.6.0
+        with:
+          name: test-results
