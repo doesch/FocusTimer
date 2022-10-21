@@ -21,10 +21,10 @@ jobs:
       - name: Build
         run: dotnet build --configuration Release --no-restore
       - name: Test
-        run: dotnet test --no-restore --verbosity normal -l:"trx;LogFileName=result.xml"
+        run: dotnet test --no-restore --verbosity normal -l:trx;
       - name: Test Reporter
         uses: dorny/test-reporter@v1.6.0
         with:
           name: test-results
-          path: "FocusTimer.Tests/TestResults/result.xml"
+          path: "FocusTimer.Tests/TestResults/*.xml"
           reporter: dotnet-trx
