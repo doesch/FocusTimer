@@ -27,3 +27,4 @@ jobs:
         with:
           name: test-results
           path: "FocusTimer.Tests/TestResults/result.xml"
+          reporter: dotnet-trx
