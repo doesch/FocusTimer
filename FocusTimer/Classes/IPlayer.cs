@@ -20,6 +20,7 @@ namespace FocusTimer.Classes
         /// The selected Track
         /// </summary>
         public ITrack SelectedTrack { get; set; }
+        float Volume { get; set; }
 
         public void Play();
 

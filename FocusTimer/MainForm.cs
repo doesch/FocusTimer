@@ -31,6 +31,9 @@ namespace FocusTimer
                 m_Player.LoadPlaylist(path);
             }
 
+            // set volume to default
+            m_Player.Volume = 1;
+
             // load init view
             LoadView(ViewsEnum.Start);            
         }

@@ -36,7 +36,9 @@
             this.pictureBoxMain = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.linkLabelStart = new System.Windows.Forms.LinkLabel();
+            this.trackBarVolume = new System.Windows.Forms.TrackBar();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMain)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarVolume)).BeginInit();
             this.SuspendLayout();
             // 
             // BttnMain
@@ -102,11 +104,24 @@
             this.linkLabelStart.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.linkLabelStart.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelStart_LinkClicked);
             // 
+            // trackBarVolume
+            // 
+            this.trackBarVolume.LargeChange = 1;
+            this.trackBarVolume.Location = new System.Drawing.Point(3, 321);
+            this.trackBarVolume.Maximum = 2;
+            this.trackBarVolume.Name = "trackBarVolume";
+            this.trackBarVolume.Size = new System.Drawing.Size(251, 45);
+            this.trackBarVolume.TabIndex = 9;
+            this.trackBarVolume.Value = 2;
+            this.trackBarVolume.Scroll += new System.EventHandler(this.trackBarVolume_Scroll);
+            this.trackBarVolume.ValueChanged += new System.EventHandler(this.volumeValueChanged);
+            // 
             // KeepFocus
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
+            this.Controls.Add(this.trackBarVolume);
             this.Controls.Add(this.linkLabelStart);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBoxMain);
@@ -115,7 +130,9 @@
             this.Name = "KeepFocus";
             this.Size = new System.Drawing.Size(260, 480);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMain)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarVolume)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -127,5 +144,6 @@
         private PictureBox pictureBoxMain;
         private Label label1;
         private LinkLabel linkLabelStart;
+        private TrackBar trackBarVolume;
     }
 }

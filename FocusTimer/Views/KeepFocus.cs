@@ -145,5 +145,21 @@ namespace FocusTimer
             // go to settings view
             this.ChangeView(ViewsEnum.Break);
         }
+
+        /// <summary>
+        /// Silder changes the volume
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void volumeValueChanged(object sender, EventArgs e)
+        {
+            float value = 1 / (float)trackBarVolume.Maximum * (float)trackBarVolume.Value;
+            m_Player.Volume = value;
+        }
+
+        private void trackBarVolume_Scroll(object sender, EventArgs e)
+        {
+
+        }
     }
 }

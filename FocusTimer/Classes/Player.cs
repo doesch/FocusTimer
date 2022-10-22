@@ -34,6 +34,24 @@ namespace FocusTimer.Classes
         /// </summary>
         private string m_CurrentTrackInPlayer { get; set; }
 
+        /// <summary>
+        /// Gets/Sets the volume
+        /// </summary>
+        public float Volume
+        {
+            get
+            {
+                return m_Player != null ? m_Player.Volume : 1;
+            }
+            set
+            {
+                if (m_Player != null)
+                {
+                    m_Player.Volume = value;
+                }
+            } 
+        }
+
         // the alarm, which will be trigged when the focus time is over
         private static SoundPlayer Alarm = new SoundPlayer(Path.Combine(Environment.CurrentDirectory, @"SoundFiles\", "582597__nezuai__ui-sound-2.wav"));
 
