@@ -30,28 +30,28 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(KeepFocus));
-            this.BttnStop = new System.Windows.Forms.Button();
+            this.BttnMain = new System.Windows.Forms.Button();
             this.labelCurrentTime = new System.Windows.Forms.Label();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.linkLabelBreak = new System.Windows.Forms.LinkLabel();
             this.pictureBoxMain = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.linkLabelStart = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMain)).BeginInit();
             this.SuspendLayout();
             // 
-            // BttnStop
+            // BttnMain
             // 
-            this.BttnStop.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.BttnStop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BttnStop.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.BttnStop.ForeColor = System.Drawing.Color.White;
-            this.BttnStop.Location = new System.Drawing.Point(3, 427);
-            this.BttnStop.Name = "BttnStop";
-            this.BttnStop.Size = new System.Drawing.Size(254, 50);
-            this.BttnStop.TabIndex = 0;
-            this.BttnStop.Text = "Stop";
-            this.BttnStop.UseVisualStyleBackColor = false;
-            this.BttnStop.Click += new System.EventHandler(this.BttnStop_Click);
+            this.BttnMain.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.BttnMain.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BttnMain.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.BttnMain.ForeColor = System.Drawing.Color.White;
+            this.BttnMain.Location = new System.Drawing.Point(3, 427);
+            this.BttnMain.Name = "BttnMain";
+            this.BttnMain.Size = new System.Drawing.Size(254, 50);
+            this.BttnMain.TabIndex = 0;
+            this.BttnMain.Text = "Take a Break";
+            this.BttnMain.UseVisualStyleBackColor = false;
+            this.BttnMain.Click += new System.EventHandler(this.BttnMain_Click);
             // 
             // labelCurrentTime
             // 
@@ -70,17 +70,6 @@
             this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
             this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            // 
-            // linkLabelBreak
-            // 
-            this.linkLabelBreak.Location = new System.Drawing.Point(3, 401);
-            this.linkLabelBreak.Name = "linkLabelBreak";
-            this.linkLabelBreak.Size = new System.Drawing.Size(254, 23);
-            this.linkLabelBreak.TabIndex = 2;
-            this.linkLabelBreak.TabStop = true;
-            this.linkLabelBreak.Text = "Take a Break >";
-            this.linkLabelBreak.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.linkLabelBreak.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelBreak_LinkClicked);
             // 
             // pictureBoxMain
             // 
@@ -102,16 +91,27 @@
             this.label1.Text = "Stay focused!";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // linkLabelStart
+            // 
+            this.linkLabelStart.Location = new System.Drawing.Point(3, 401);
+            this.linkLabelStart.Name = "linkLabelStart";
+            this.linkLabelStart.Size = new System.Drawing.Size(254, 23);
+            this.linkLabelStart.TabIndex = 8;
+            this.linkLabelStart.TabStop = true;
+            this.linkLabelStart.Text = "Start Page";
+            this.linkLabelStart.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.linkLabelStart.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelStart_LinkClicked);
+            // 
             // KeepFocus
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
+            this.Controls.Add(this.linkLabelStart);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBoxMain);
-            this.Controls.Add(this.linkLabelBreak);
             this.Controls.Add(this.labelCurrentTime);
-            this.Controls.Add(this.BttnStop);
+            this.Controls.Add(this.BttnMain);
             this.Name = "KeepFocus";
             this.Size = new System.Drawing.Size(260, 480);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMain)).EndInit();
@@ -121,11 +121,11 @@
 
         #endregion
 
-        private Button BttnStop;
+        private Button BttnMain;
         private Label labelCurrentTime;
         private ImageList imageList1;
-        private LinkLabel linkLabelBreak;
         private PictureBox pictureBoxMain;
         private Label label1;
+        private LinkLabel linkLabelStart;
     }
 }

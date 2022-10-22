@@ -122,12 +122,7 @@ namespace FocusTimer
             }
         }
 
-        /// <summary>
-        /// When user stopped
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void BttnStop_Click(object sender, EventArgs e)
+        private void linkLabelStart_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             // stop music
             this.m_Player.Pause();
@@ -139,12 +134,7 @@ namespace FocusTimer
             this.ChangeView(ViewsEnum.Start);
         }
 
-        /// <summary>
-        /// When user wants to make abreak
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void linkLabelBreak_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void BttnMain_Click(object sender, EventArgs e)
         {
             // stop music
             this.m_Player.Pause();
