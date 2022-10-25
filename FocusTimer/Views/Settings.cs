@@ -122,10 +122,15 @@ namespace FocusTimer
                     // select or deselect
                     dataGridViewPlayList.Rows[i].Selected = track.FullPath == m_Player.SelectedTrack.FullPath; // row
 
-                    if (dataGridViewPlayList.Rows[i].Cells.Count > 0) // I don´t know why I need this check.
+                    try
                     {
+                        // I don´t know why I need this try-catch. It sometimes occurs when I select another folder as playlist
                         dataGridViewPlayList.Rows[i].Cells[0].Selected = track.FullPath == m_Player.SelectedTrack.FullPath; // cell
-                    }                
+                    }
+                    catch (System.IndexOutOfRangeException)
+                    {
+                        continue;
+                    }          
                 }
             } 
         }
