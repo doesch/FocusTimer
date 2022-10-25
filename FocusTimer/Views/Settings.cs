@@ -148,11 +148,19 @@ namespace FocusTimer
 
             if (dataGridView.SelectedCells.Count > 0)
             {
-                // find row by cell
-                var rowIndex = dataGridView.SelectedCells[0].RowIndex;
+                // I don´t know why I need to use this try - catch
+                try
+                {
+                    // find row by cell
+                    var rowIndex = dataGridView.SelectedCells[0].RowIndex;
 
-                // get track from rable row and assign it as selected track
-                m_Player.SelectedTrack = (Track)dataGridView.Rows[rowIndex].DataBoundItem;
+                    // get track from rable row and assign it as selected track
+                    m_Player.SelectedTrack = (Track)dataGridView.Rows[rowIndex].DataBoundItem;
+                }
+                catch (System.IndexOutOfRangeException)
+                {
+                    // do nothing
+                }
             }
         }
 
