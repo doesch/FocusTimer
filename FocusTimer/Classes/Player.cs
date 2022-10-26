@@ -77,9 +77,21 @@ namespace FocusTimer.Classes
                 return;
             }
 
-            // play new song, when path has changed, else continue current selected (pause release)
-            if (SelectedTrack.FullPath != m_CurrentTrackInPlayer)
+            // play new song, when path has changed or latest track has end, else continue current selected (pause release)
+            if (SelectedTrack.FullPath != m_CurrentTrackInPlayer || m_Player.PlaybackState == PlaybackState.Stopped)
             {
+                // destroy old instance
+                if (m_Player != null)
+                {
+                    m_Player.Dispose();
+                }
+
+                if (m_Reader != null)
+                {
+                    m_Reader.Dispose();
+                }
+
+                // create new instance with selected track
                 m_Reader = new Mp3FileReader(SelectedTrack.FullPath);
                 m_Player = new WaveOut();
                 m_Player.PlaybackStopped += new EventHandler<NAudio.Wave.StoppedEventArgs>(OnPlayBackStopped);
@@ -101,7 +113,7 @@ namespace FocusTimer.Classes
         private void OnPlayBackStopped(object? sender, EventArgs e)
         {
             // play next random track
-            m_Player.Stop();
+            Stop();
             SelectRandomTrack();
             Play();
         }
@@ -111,11 +123,9 @@ namespace FocusTimer.Classes
         /// </summary>
         public void Stop()
         {
-            if (m_Player != null && m_Player.PlaybackState == PlaybackState.Playing)
+            if (m_Player != null)
             {
                 m_Player.Stop();
-                m_Player.Dispose();
-                m_Reader.Dispose();
             }
         }
 
@@ -168,7 +178,7 @@ namespace FocusTimer.Classes
             // select random track
             if (Tracklist.Count > 1)
             {
-                var index = new Random().Next(0, Tracklist.Count - 1);
+                var index = new Random().Next(0, Tracklist.Count);
                 SelectedTrack = Tracklist[index];
             }
             else if (Tracklist.Count == 1)
@@ -177,6 +187,7 @@ namespace FocusTimer.Classes
             }
             else
             {
+                // there is no track in the list
                 SelectedTrack = null;
             }
         }
