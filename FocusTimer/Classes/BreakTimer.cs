@@ -30,7 +30,7 @@ namespace FocusTimer.Classes
         public BreakTimer() 
         {
             // init .NET timer object
-            m_Timer.Interval = 1000; // event fires every 1000 seconds
+            m_Timer.Interval = 1000; // event fires every 1000 milliseconds
             m_Timer.Enabled = true;
             m_Timer.Elapsed += new ElapsedEventHandler(OnTimerTick);
         }

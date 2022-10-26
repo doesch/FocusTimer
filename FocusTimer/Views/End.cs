@@ -23,7 +23,7 @@ namespace FocusTimer.Views
             m_Timer = pTimer;
             m_Player = pPlayer;
             InitializeComponent();
-            Init()
+            Init();
         }
 
         /// <summary>
