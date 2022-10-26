@@ -82,6 +82,7 @@ namespace FocusTimer.Classes
             {
                 m_Reader = new Mp3FileReader(SelectedTrack.FullPath);
                 m_Player = new WaveOut();
+                m_Player.PlaybackStopped += new EventHandler<NAudio.Wave.StoppedEventArgs>(OnPlayBackStopped);
                 m_Player.Init(m_Reader);
 
                 // cache the latest selected patch
@@ -89,6 +90,20 @@ namespace FocusTimer.Classes
             }
 
             m_Player.Play();
+        }
+
+        /// <summary>
+        /// Eventhandler that fires when the music ends.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        /// <exception cref="NotImplementedException"></exception>
+        private void OnPlayBackStopped(object? sender, EventArgs e)
+        {
+            // play next random track
+            m_Player.Stop();
+            SelectRandomTrack();
+            Play();
         }
 
         /// <summary>
