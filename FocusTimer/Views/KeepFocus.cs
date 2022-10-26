@@ -96,9 +96,6 @@ namespace FocusTimer
             // keep timer running to calculate the overtime
             // stop timer
             m_Timer.Stop();
-
-            // Play the alarm
-            Player.PlayAlarm();
             
             ChangeView(ViewsEnum.End);
         }

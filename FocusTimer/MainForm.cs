@@ -35,7 +35,7 @@ namespace FocusTimer
             m_Player.Volume = 1;
 
             // load init view
-            LoadView(ViewsEnum.Start);            
+            LoadView(ViewsEnum.Start);
         }
 
         /// <summary>

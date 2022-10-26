@@ -23,6 +23,16 @@ namespace FocusTimer.Views
             m_Timer = pTimer;
             m_Player = pPlayer;
             InitializeComponent();
+            Init()
+        }
+
+        /// <summary>
+        /// Init the view
+        /// </summary>
+        private void Init()
+        {
+            // Play the alarm, because focus time has end.
+            Player.PlayAlarm();
         }
 
         private void bttnStartBreak_Click(object sender, EventArgs e)
