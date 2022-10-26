@@ -37,6 +37,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.linkLabelStart = new System.Windows.Forms.LinkLabel();
             this.trackBarVolume = new System.Windows.Forms.TrackBar();
+            this.linkLabelNextTrack = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarVolume)).BeginInit();
             this.SuspendLayout();
@@ -116,11 +117,23 @@
             this.trackBarVolume.Scroll += new System.EventHandler(this.trackBarVolume_Scroll);
             this.trackBarVolume.ValueChanged += new System.EventHandler(this.volumeValueChanged);
             // 
+            // linkLabelNextTrack
+            // 
+            this.linkLabelNextTrack.Location = new System.Drawing.Point(6, 298);
+            this.linkLabelNextTrack.Name = "linkLabelNextTrack";
+            this.linkLabelNextTrack.Size = new System.Drawing.Size(251, 20);
+            this.linkLabelNextTrack.TabIndex = 10;
+            this.linkLabelNextTrack.TabStop = true;
+            this.linkLabelNextTrack.Text = "Play random track >>";
+            this.linkLabelNextTrack.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.linkLabelNextTrack.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelNextTrack_LinkClicked);
+            // 
             // KeepFocus
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
+            this.Controls.Add(this.linkLabelNextTrack);
             this.Controls.Add(this.trackBarVolume);
             this.Controls.Add(this.linkLabelStart);
             this.Controls.Add(this.label1);
@@ -145,5 +158,6 @@
         private Label label1;
         private LinkLabel linkLabelStart;
         private TrackBar trackBarVolume;
+        private LinkLabel linkLabelNextTrack;
     }
 }

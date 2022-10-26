@@ -161,5 +161,13 @@ namespace FocusTimer
         {
 
         }
+
+        private void linkLabelNextTrack_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            // play the next track
+            m_Player.Stop();
+            m_Player.SelectRandomTrack();
+            m_Player.Play();
+        }
     }
 }
