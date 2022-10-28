@@ -92,7 +92,15 @@ namespace FocusTimer.Classes
                 }
 
                 // create new instance with selected track
-                m_Reader = new Mp3FileReader(SelectedTrack.FullPath);
+                try
+                {
+                    m_Reader = new Mp3FileReader(SelectedTrack.FullPath);
+                }
+                catch (InvalidDataException)
+                {
+                    MessageBox.Show("Invalid File.", "Cannot play music.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                                
                 m_Player = new WaveOut();
                 m_Player.PlaybackStopped += new EventHandler<NAudio.Wave.StoppedEventArgs>(OnPlayBackStopped);
                 m_Player.Init(m_Reader);

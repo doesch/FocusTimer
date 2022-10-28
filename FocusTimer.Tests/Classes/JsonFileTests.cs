@@ -49,7 +49,7 @@ namespace FocusTimer_Tests.Classes
             // Act
             jsonFile.Statistics.CurrentDay.FocusTime += TimeSpan.FromMinutes(minutes1);
             jsonFile.Export();
-
+            
             // add additional time
             jsonFile.Statistics.CurrentDay.FocusTime += TimeSpan.FromMinutes(minutes2);
             jsonFile.Export();
