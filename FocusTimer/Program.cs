@@ -1,5 +1,8 @@
 namespace FocusTimer
 {
+    /// <summary>
+    ///  The entry point of the application.
+    /// </summary>
     internal static class Program
     {
         /// <summary>
