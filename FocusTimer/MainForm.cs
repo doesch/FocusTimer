@@ -1,6 +1,5 @@
 using FocusTimer.Classes;
 using FocusTimer.Views;
-using System.Reflection;
 
 namespace FocusTimer
 {
@@ -66,7 +65,7 @@ namespace FocusTimer
                     if (this.WindowState != FormWindowState.Normal)
                     {
                         this.WindowState = FormWindowState.Normal;
-                    }                    
+                    }
                     break;
                 case ViewsEnum.Break:
                     view = new Break(new BreakTimer(), m_JsonFile, m_Timer);

@@ -1,11 +1,5 @@
 ﻿using NAudio.Wave;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
 using System.Media;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FocusTimer.Classes
 {
@@ -49,7 +43,7 @@ namespace FocusTimer.Classes
                 {
                     m_Player.Volume = value;
                 }
-            } 
+            }
         }
 
         // the alarm, which will be trigged when the focus time is over
@@ -100,7 +94,7 @@ namespace FocusTimer.Classes
                 {
                     MessageBox.Show("Invalid File.", "Cannot play music.", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                                
+
                 m_Player = new WaveOut();
                 m_Player.PlaybackStopped += new EventHandler<NAudio.Wave.StoppedEventArgs>(OnPlayBackStopped);
                 m_Player.Init(m_Reader);
