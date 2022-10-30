@@ -39,6 +39,9 @@ namespace FocusTimer.Views
 
             // show init value
             RenderTime(m_BreakTimer);
+
+            // show focus time of the day
+            labelCurrentFocusTimeOfTheDay.Text = $"Your total focus time for today is: {m_JsonFile.Statistics.CurrentDay.FocusTime.ToString(Constants.cDisplayTimeFormatShort)}";
         }
 
         /// <summary>

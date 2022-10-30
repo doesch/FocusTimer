@@ -34,6 +34,7 @@
             this.linkLabelStart = new System.Windows.Forms.LinkLabel();
             this.pictureBoxMain = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.labelCurrentFocusTimeOfTheDay = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMain)).BeginInit();
             this.SuspendLayout();
             // 
@@ -94,11 +95,21 @@
             this.label1.Text = "Take a break!";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // labelCurrentFocusTimeOfTheDay
+            // 
+            this.labelCurrentFocusTimeOfTheDay.Location = new System.Drawing.Point(3, 329);
+            this.labelCurrentFocusTimeOfTheDay.Name = "labelCurrentFocusTimeOfTheDay";
+            this.labelCurrentFocusTimeOfTheDay.Size = new System.Drawing.Size(251, 20);
+            this.labelCurrentFocusTimeOfTheDay.TabIndex = 9;
+            this.labelCurrentFocusTimeOfTheDay.Text = "Your total focus time for today is:";
+            this.labelCurrentFocusTimeOfTheDay.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Break
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.labelCurrentFocusTimeOfTheDay);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBoxMain);
             this.Controls.Add(this.linkLabelStart);
@@ -118,5 +129,6 @@
         private LinkLabel linkLabelStart;
         private PictureBox pictureBoxMain;
         private Label label1;
+        private Label labelCurrentFocusTimeOfTheDay;
     }
 }

@@ -31,7 +31,7 @@ namespace FocusTimer.Views
         private void Init()
         {
             // display statistic
-            labelCurrentTime.Text = m_JsonFile.Statistics.CurrentDay.FocusTime.ToString(Constants.cDisplayTimeFormat);
+            labelCurrentTime.Text = m_JsonFile.Statistics.CurrentDay.FocusTime.ToString(Constants.cDisplayTimeFormatShort);
         }
 
         private void bttnStartFocusTime_Click(object sender, EventArgs e)

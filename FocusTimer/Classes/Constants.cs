@@ -16,6 +16,12 @@ namespace FocusTimer.Classes
         /// </summary>
         public const string cDisplayTimeFormat = "hh\\:mm\\:ss";
 
+
+        /// <summary>
+        /// The displayed timeformat without seconds
+        /// </summary>
+        public const string cDisplayTimeFormatShort = "hh\\:mm";
+
         /// <summary>
         /// The path to the 
         /// </summary>
