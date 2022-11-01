@@ -20,11 +20,11 @@ namespace FocusTimer.Classes
         /// <summary>
         /// Eventhandler which fires every 1 second
         /// </summary>
-        public EventHandler OnTick { set; get; }
+        public event EventHandler? Tick;
 
         /// <summary>
         /// Eventhandler which fires when timer ends
         /// </summary>
-        public EventHandler OnEnd { set; get; }
+        public event EventHandler? End;
     }
 }

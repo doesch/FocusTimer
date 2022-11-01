@@ -15,7 +15,7 @@ namespace FocusTimer
     /// <summary>
     /// The view where the user keeps focus
     /// </summary>
-    public partial class KeepFocus : BaseView
+    public partial class KeepFocus : BaseView, IDisposable
     {
         private IFocusTimer m_Timer;
         private IPlayer m_Player;
@@ -45,8 +45,8 @@ namespace FocusTimer
             m_Player.Play();
 
             // assign handler
-            m_Timer.OnTick = OnTick;            
-            m_Timer.OnEnd = OnEnd;
+            m_Timer.Tick += Timer_Tick;            
+            m_Timer.End += Timer_End;
 
             // start timer
             m_Timer.Start();
@@ -60,7 +60,7 @@ namespace FocusTimer
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void OnTick(object? sender, EventArgs e)
+        private void Timer_Tick(object? sender, EventArgs e)
         {
             // show time in label
             var timer = (FocusTimer.Classes.FocusTimer)sender;
@@ -91,7 +91,7 @@ namespace FocusTimer
         /// <param name="sender"></param>
         /// <param name="e"></param>
         /// <exception cref="NotImplementedException"></exception>
-        private void OnEnd(object? sender, EventArgs e)
+        private void Timer_End(object? sender, EventArgs e)
         {
             // keep timer running to calculate the overtime
             // stop timer
@@ -165,6 +165,21 @@ namespace FocusTimer
             m_Player.Stop();
             m_Player.SelectRandomTrack();
             m_Player.Play();
+        }
+
+        /// <summary>
+        /// Dispose
+        /// </summary>
+        public void Dispose()
+        {
+            // remove eventhandler
+            m_Timer.Tick -= Timer_Tick;
+            m_Timer.End -= Timer_End;
+
+            // Dispose of unmanaged resources.
+            Dispose(true);
+            // Suppress finalization.
+            GC.SuppressFinalize(this);
         }
     }
 }

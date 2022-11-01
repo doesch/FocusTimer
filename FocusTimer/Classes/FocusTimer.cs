@@ -27,12 +27,12 @@ namespace FocusTimer.Classes
         /// <summary>
         /// Set an eventhandler from outside
         /// </summary>
-        public EventHandler OnTick { set; get; }
+        public event EventHandler? Tick;
 
         /// <summary>
         /// When finishes
         /// </summary>
-        public EventHandler OnEnd { set; get; }
+        public event EventHandler? End;
 
         /// <summary>
         /// constructor
@@ -77,15 +77,12 @@ namespace FocusTimer.Classes
             CurrentTime -= TimeSpan.FromSeconds(1);
 
             // execute events
-            if (OnTick != null)
-            {
-                OnTick(this, e);
-            }
+            Tick?.Invoke(this, e);
 
             // execute event, when timer ran out (finished)
-            if (OnEnd != null && CurrentTime <= default(TimeSpan))
+            if (CurrentTime <= default(TimeSpan))
             {
-                OnEnd(this, e);
+                End?.Invoke(this, e);
             }
         }
     }

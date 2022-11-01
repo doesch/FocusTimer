@@ -22,7 +22,7 @@ namespace FocusTimer.Classes
         /// <summary>
         /// Set an eventhandler from outside
         /// </summary>
-        public EventHandler OnTick { set; get; }
+        public event EventHandler Tick;
 
         /// <summary>
         /// constructor
@@ -32,7 +32,7 @@ namespace FocusTimer.Classes
             // init .NET timer object
             m_Timer.Interval = 1000; // event fires every 1000 milliseconds
             m_Timer.Enabled = true;
-            m_Timer.Elapsed += new ElapsedEventHandler(OnTimerTick);
+            m_Timer.Elapsed += BreakTimer_Tick;
         }
 
         /// <summary>
@@ -60,16 +60,13 @@ namespace FocusTimer.Classes
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void OnTimerTick(object? sender, EventArgs e)
+        private void BreakTimer_Tick(object? sender, EventArgs e)
         {
             // deduct 1 second from time
             CurrentTime += TimeSpan.FromSeconds(1);
 
             // execute events
-            if (OnTick != null)
-            {
-                OnTick(this, e);
-            }
+            Tick?.Invoke(this, e);
         }
     }
 }

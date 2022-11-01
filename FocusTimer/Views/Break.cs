@@ -32,7 +32,7 @@ namespace FocusTimer.Views
         private void Init()
         {
             // apply eventhandler
-            m_BreakTimer.OnTick = new EventHandler(OnTick);
+            m_BreakTimer.Tick += BreakTimer_Tick;
 
             // start timer
             m_BreakTimer.Start();
@@ -49,8 +49,10 @@ namespace FocusTimer.Views
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void OnTick(object? sender, EventArgs e)
+        private void BreakTimer_Tick(object? sender, EventArgs e)
         {
+            if (sender == null) return;
+
             // show time in label
             var timer = (BreakTimer)sender;
 
@@ -110,6 +112,20 @@ namespace FocusTimer.Views
         private void linkLabelStart_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             this.ChangeView(ViewsEnum.Start);
+        }
+
+        /// <summary>
+        /// dispose
+        /// </summary>
+        public void Dispose()
+        {
+            // remove events
+            m_BreakTimer.Tick -= BreakTimer_Tick;
+
+            // Dispose of unmanaged resources.
+            Dispose(true);
+            // Suppress finalization.
+            GC.SuppressFinalize(this);
         }
     }
 }
