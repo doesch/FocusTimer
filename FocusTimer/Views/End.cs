@@ -31,15 +31,15 @@ namespace FocusTimer.Views
         /// </summary>
         private void Init()
         {
+            // pause music
+            m_Player.Pause();
+
             // Play the alarm, because focus time has end.
             Player.PlayAlarm();
         }
 
         private void bttnStartBreak_Click(object sender, EventArgs e)
         {
-            // pause music
-            m_Player.Pause();
-
             this.ChangeView(ViewsEnum.Break);
         }
 
