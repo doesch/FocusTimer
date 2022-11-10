@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(End));
             this.bttnStartBreak = new System.Windows.Forms.Button();
             this.labelMainText = new System.Windows.Forms.Label();
             this.linkLabelStartPage = new System.Windows.Forms.LinkLabel();
@@ -87,8 +86,8 @@
             // 
             // pictureBoxMain
             // 
-            this.pictureBoxMain.Image = global::FocusTimer.Properties.Resources.check_circle_FILL1_wght400_GRAD0_opsz48;
-            this.pictureBoxMain.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxMain.InitialImage")));
+            this.pictureBoxMain.Image = global::FocusTimer.Properties.Resources.check_64x64;
+            this.pictureBoxMain.InitialImage = global::FocusTimer.Properties.Resources.check_64x641;
             this.pictureBoxMain.Location = new System.Drawing.Point(3, 3);
             this.pictureBoxMain.Name = "pictureBoxMain";
             this.pictureBoxMain.Size = new System.Drawing.Size(251, 183);

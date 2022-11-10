@@ -60,15 +60,4 @@
   <metadata name="imageList1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="pictureBoxMain.InitialImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAOlJREFUaEPt
-        mN0NwjAMhDMKozAKmzAKozAKo4DvLbJOQH7sJNJ90vdUxe61SWW1CCHE9rw38GXezC5YwVV2hWCFVok3
-        0QwrFOnV9NTXm6kXZ6gAnnpxhgrgqRdnqACeenGGxwf45tNshhVa5bGjBEaIu9kFKxgpOwNDsCaRKoCH
-        NYlUATysSaQK4GFNIj0+wMWcCuYP1ijK6TxM1ijCrmHtFxigWLMI8bBCyNhGXf98/gUHCw1Y41lO//p4
-        EAIjLWs+Ih5M+M3X4Exgr45sK9w0anTP+EIkwvZwpsOwopkOw4pmKoQQ21LKB5GR0vnf7BzWAAAAAElF
-        TkSuQmCC
-</value>
-  </data>
 </root>
