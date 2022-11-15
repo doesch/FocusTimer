@@ -40,7 +40,8 @@ namespace FocusTimer_Tests.Classes
         {
             // Arrange
             DeleteJsonFile(); // delete the json file if exists
-            var jsonFile = new JsonFile();
+            var loggerService = new LoggerService(Constants.FullPathToLogfile);
+            var jsonFile = new JsonFile(loggerService);
             var minutes1 = 25;
             var minutes2 = 5;
             var expectedValue = new TimeSpan();

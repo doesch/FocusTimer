@@ -13,7 +13,8 @@ namespace FocusTimer
         /// </summary>
         private static IFocusTimer m_Timer = new Classes.FocusTimer();
         private static IPlayer m_Player = new Player();
-        private static IJsonFile m_JsonFile = new JsonFile();
+        private static ILoggerService m_LoggerService = new LoggerService(Constants.FullPathToLogfile); // logger
+        private static IJsonFile m_JsonFile = new JsonFile(m_LoggerService);
 
         public MainForm()
         {
@@ -147,6 +148,15 @@ namespace FocusTimer
             {
                 Location = location;
             }
+        }
+
+        /// <summary>
+        /// Closing event handler
+        /// </summary>
+        private void MainForm_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            // log
+            m_LoggerService.Log("----- App closed -----");
         }
     }
 }

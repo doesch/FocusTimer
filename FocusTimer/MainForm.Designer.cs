@@ -53,6 +53,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Focus Timer";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.OnFormClosing);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(MainForm_Closing);
             this.Load += new System.EventHandler(this.OnLoad);
             this.ResumeLayout(false);
 

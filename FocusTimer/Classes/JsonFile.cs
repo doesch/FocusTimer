@@ -15,13 +15,20 @@ namespace FocusTimer.Classes
         /// <summary>
         /// The statistics in json file
         /// </summary>
-        public IStatistics Statistics { get; set; }
+        public IStatistics? Statistics { get; set; }
+
+        /// <summary>
+        /// the loggerservice
+        /// </summary>
+        private ILoggerService m_LoggerService;
 
         /// <summary>
         /// The json file
         /// </summary>
-        public JsonFile()
+        public JsonFile(ILoggerService pLoggerService)
         {
+            // inject logger
+            m_LoggerService = pLoggerService;
             Init();
         }
 
@@ -59,9 +66,15 @@ namespace FocusTimer.Classes
         /// <exception cref="NotImplementedException"></exception>
         public void Export()
         {
-            string json = JsonSerializer.Serialize(Statistics);
-            File.WriteAllText(Constants.FullPathToJsonFile, String.Empty); // clear file
-            File.WriteAllText(Constants.FullPathToJsonFile, json); // write data
+            if (Statistics != null)
+            {
+                string json = JsonSerializer.Serialize(Statistics);
+                File.WriteAllText(Constants.FullPathToJsonFile, String.Empty); // clear file
+                File.WriteAllText(Constants.FullPathToJsonFile, json); // write data
+
+                // log
+                m_LoggerService.Log($"Current Day Focus Time: {Statistics.CurrentDay.FocusTime.ToString(Constants.cDisplayTimeFormatShort)}");
+            }
         }
 
         /// <summary>
@@ -73,6 +86,10 @@ namespace FocusTimer.Classes
             using (FileStream stream = File.OpenRead(Constants.FullPathToJsonFile))
             {
                 Statistics = JsonSerializer.Deserialize<Statistics>(stream);
+
+                // log starting the app
+                m_LoggerService.Log("----- App started -----");
+                m_LoggerService.Log($"Imported Current Day Focus Time: {Statistics.CurrentDay.FocusTime.ToString(Constants.cDisplayTimeFormatShort)}");
             }
         }
     }
