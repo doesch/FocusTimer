@@ -60,6 +60,9 @@ namespace FocusTimer
         /// <param name="pControl"></param>
         private void LoadView(ViewsEnum pView)
         {
+            // log
+            m_LoggerService.Log($"--- Loaded View: {pView}");
+
             BaseView view;
 
             /// convert enum into view
