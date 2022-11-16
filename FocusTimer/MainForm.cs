@@ -39,6 +39,22 @@ namespace FocusTimer
         }
 
         /// <summary>
+        /// UserControl has fired an event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void OnViewChanged(object? sender, EventArgs e)
+        {
+            var viewBase = (BaseView)sender;
+            LoadView(viewBase.NextView);
+
+            m_LoggerService.Log($"number of controls: {this.Controls.Count}");
+
+            //// close the control
+            //this.Controls.Remove(viewBase);
+        }
+
+        /// <summary>
         /// load main view
         /// </summary>
         /// <param name="pControl"></param>
@@ -90,7 +106,7 @@ namespace FocusTimer
             else
             {
                 LoadView(view);
-            }
+            }            
         }
 
         /// <summary>
@@ -99,19 +115,14 @@ namespace FocusTimer
         /// <param name="pView"></param>
         private void LoadView(BaseView pView)
         {
+            // dispose all views
+            foreach (Control control in mainLayoutPanel.Controls)
+            {
+                control.Dispose();
+            }
+             
             mainLayoutPanel.Controls.Clear();
             mainLayoutPanel.Controls.Add(pView);
-        }
-
-        /// <summary>
-        /// UserControl has fired an event
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void OnViewChanged(object? sender, EventArgs e)
-        {
-            var viewBase = (BaseView)sender;
-            LoadView(viewBase.NextView);
         }
 
         /// <summary>
