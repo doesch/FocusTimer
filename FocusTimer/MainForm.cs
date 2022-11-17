@@ -123,7 +123,8 @@ namespace FocusTimer
             {
                 control.Dispose();
             }
-             
+
+            // remove control from main view
             mainLayoutPanel.Controls.Clear();
             mainLayoutPanel.Controls.Add(pView);
         }

@@ -31,6 +31,9 @@ namespace FocusTimer.Views
         /// </summary>
         private void Init()
         {
+            // apply dispose event handler
+            Disposed += OnDispose;
+
             // apply eventhandler
             m_BreakTimer.Tick += BreakTimer_Tick;
 
@@ -117,15 +120,10 @@ namespace FocusTimer.Views
         /// <summary>
         /// dispose
         /// </summary>
-        public void Dispose()
+        private void OnDispose(object sender, EventArgs e)
         {
             // remove events
             m_BreakTimer.Tick -= BreakTimer_Tick;
-
-            // Dispose of unmanaged resources.
-            Dispose(true);
-            // Suppress finalization.
-            GC.SuppressFinalize(this);
         }
     }
 }

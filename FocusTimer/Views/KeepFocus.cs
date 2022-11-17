@@ -41,6 +41,9 @@ namespace FocusTimer
         /// </summary>
         private void Init()
         {
+            // add dispose event handler
+            Disposed += OnDispose;
+
             // play music
             m_Player.Play();
 
@@ -170,16 +173,11 @@ namespace FocusTimer
         /// <summary>
         /// Dispose
         /// </summary>
-        public void Dispose()
+        private void OnDispose(object sender, EventArgs e)
         {
             // remove eventhandler
             m_Timer.Tick -= Timer_Tick;
             m_Timer.End -= Timer_End;
-
-            // Dispose of unmanaged resources.
-            Dispose(true);
-            // Suppress finalization.
-            GC.SuppressFinalize(this);
         }
     }
 }
