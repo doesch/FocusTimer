@@ -1,4 +1,4 @@
-﻿using FocusTimer.Classes;
+﻿using FocusTimer.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,10 +15,10 @@ namespace FocusTimer.Views
 
     public partial class End : BaseView
     {
-        private IFocusTimer m_Timer;
-        private IPlayer m_Player;
+        private IFocusTimerService m_Timer;
+        private IPlayerService m_Player;
 
-        public End(IFocusTimer pTimer, IPlayer pPlayer)
+        public End(IFocusTimerService pTimer, IPlayerService pPlayer)
         {
             m_Timer = pTimer;
             m_Player = pPlayer;
@@ -35,7 +35,7 @@ namespace FocusTimer.Views
             m_Player.Pause();
 
             // Play the alarm, because focus time has end.
-            Player.PlayAlarm();
+            PlayerService.PlayAlarm();
         }
 
         private void bttnStartBreak_Click(object sender, EventArgs e)

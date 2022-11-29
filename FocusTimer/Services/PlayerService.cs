@@ -1,12 +1,12 @@
 ﻿using NAudio.Wave;
 using System.Media;
 
-namespace FocusTimer.Classes
+namespace FocusTimer.Services
 {
     /// <summary>
     /// Player plays music
     /// </summary>
-    public class Player : IPlayer
+    public class PlayerService : IPlayerService
     {
         /// <summary> The player. </summary>
         private static WaveOut m_Player;

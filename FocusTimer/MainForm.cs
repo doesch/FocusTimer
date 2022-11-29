@@ -1,4 +1,4 @@
-using FocusTimer.Classes;
+using FocusTimer.Services;
 using FocusTimer.Views;
 
 namespace FocusTimer
@@ -11,10 +11,10 @@ namespace FocusTimer
         /// <summary>
         /// Shares data between all views
         /// </summary>
-        private static IFocusTimer m_Timer = new Classes.FocusTimer();
-        private static IPlayer m_Player = new Player();
+        private static IFocusTimerService m_Timer = new Services.FocusTimerService();
+        private static IPlayerService m_Player = new PlayerService();
         private static ILoggerService m_LoggerService = new LoggerService(Constants.FullPathToLogfile); // logger
-        private static IJsonFile m_JsonFile = new JsonFile(m_LoggerService);
+        private static IJsonFileService m_JsonFile = new JsonFileService(m_LoggerService);
 
         public MainForm()
         {
@@ -88,7 +88,7 @@ namespace FocusTimer
                     }
                     break;
                 case ViewsEnum.Break:
-                    view = new Break(new BreakTimer(), m_JsonFile, m_Timer);
+                    view = new Break(new BreakTimerService(), m_JsonFile, m_Timer);
                     break;
                 default:
                     view = new Start(m_JsonFile, m_Timer);

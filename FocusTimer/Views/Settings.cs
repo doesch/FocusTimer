@@ -1,4 +1,4 @@
-﻿using FocusTimer.Classes;
+﻿using FocusTimer.Services;
 using FocusTimer.Views;
 using System;
 using System.Collections.Generic;
@@ -20,10 +20,10 @@ namespace FocusTimer
         /// <summary>
         /// Data shared between views
         /// </summary>
-        private IFocusTimer m_Timer;
-        private IPlayer m_Player;
+        private IFocusTimerService m_Timer;
+        private IPlayerService m_Player;
 
-        public Settings(IFocusTimer pTimer, IPlayer pPlayer)
+        public Settings(IFocusTimerService pTimer, IPlayerService pPlayer)
         {
             m_Timer = pTimer;
             m_Player = pPlayer;

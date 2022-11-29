@@ -1,4 +1,4 @@
-﻿using FocusTimer.Classes;
+﻿using FocusTimer.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,10 +13,10 @@ namespace FocusTimer.Views
 {
     public partial class Start : BaseView
     {
-        private IJsonFile m_JsonFile;
-        private IFocusTimer m_Timer;
+        private IJsonFileService m_JsonFile;
+        private IFocusTimerService m_Timer;
 
-        public Start(IJsonFile pJsonFile, IFocusTimer timer)
+        public Start(IJsonFileService pJsonFile, IFocusTimerService timer)
         {
             m_JsonFile = pJsonFile;
             m_Timer = timer;

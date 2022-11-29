@@ -1,4 +1,4 @@
-﻿using FocusTimer.Classes;
+﻿using FocusTimer.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,11 +13,11 @@ namespace FocusTimer.Views
 {
     public partial class Break : BaseView
     {
-        IBreakTimer m_BreakTimer;
-        private IJsonFile m_JsonFile; // statistics
-        private IFocusTimer m_Timer;
+        IBreakTimerService m_BreakTimer;
+        private IJsonFileService m_JsonFile; // statistics
+        private IFocusTimerService m_Timer;
 
-        public Break(IBreakTimer pBreakTimer, IJsonFile pJsonFile, IFocusTimer timer)
+        public Break(IBreakTimerService pBreakTimer, IJsonFileService pJsonFile, IFocusTimerService timer)
         {
             m_BreakTimer = pBreakTimer;
             m_JsonFile = pJsonFile;
@@ -57,7 +57,7 @@ namespace FocusTimer.Views
             if (sender == null) return;
 
             // show time in label
-            var timer = (BreakTimer)sender;
+            var timer = (BreakTimerService)sender;
 
             // use invoker for threads
             RenderTime(timer);
@@ -70,7 +70,7 @@ namespace FocusTimer.Views
         /// Save statistics
         /// </summary>
         /// <param name="pBreakTimer"></param>
-        private void SaveStats(IBreakTimer pBreakTimer)
+        private void SaveStats(IBreakTimerService pBreakTimer)
         {
             if (pBreakTimer.CurrentTime.Seconds == 0)
             {
@@ -84,7 +84,7 @@ namespace FocusTimer.Views
         /// Renders the time in the view
         /// </summary>
         /// <param name="pTimer"></param>
-        private void RenderTime(IBreakTimer pTimer)
+        private void RenderTime(IBreakTimerService pTimer)
         {
             if (this.labelCurrentTime.InvokeRequired)
             {

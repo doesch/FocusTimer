@@ -1,5 +1,5 @@
 using FluentAssertions;
-using FocusTimer.Classes;
+using FocusTimer.Services;
 
 namespace FocusTimer_Tests.Classes
 {
@@ -41,7 +41,7 @@ namespace FocusTimer_Tests.Classes
             // Arrange
             DeleteJsonFile(); // delete the json file if exists
             var loggerService = new LoggerService(Constants.FullPathToLogfile);
-            var jsonFile = new JsonFile(loggerService);
+            var jsonFile = new JsonFileService(loggerService);
             var minutes1 = 25;
             var minutes2 = 5;
             var expectedValue = new TimeSpan();

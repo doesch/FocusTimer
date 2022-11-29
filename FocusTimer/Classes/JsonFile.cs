@@ -5,12 +5,12 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 
-namespace FocusTimer.Classes
+namespace FocusTimer.Services
 {
     /// <summary>
     /// manages the json file
     /// </summary>
-    public class JsonFile : IJsonFile
+    public class JsonFileService : IJsonFileService
     {
         /// <summary>
         /// The statistics in json file
@@ -25,7 +25,7 @@ namespace FocusTimer.Classes
         /// <summary>
         /// The json file
         /// </summary>
-        public JsonFile(ILoggerService pLoggerService)
+        public JsonFileService(ILoggerService pLoggerService)
         {
             // inject logger
             m_LoggerService = pLoggerService;

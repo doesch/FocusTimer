@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FocusTimer.Classes
+namespace FocusTimer.Services
 {
     public class Track : ITrack
     {

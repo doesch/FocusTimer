@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FocusTimer.Classes
+namespace FocusTimer.Services
 {
     /// <summary>
     /// The player
     /// </summary>
-    public interface IPlayer
+    public interface IPlayerService
     {
         /// <summary>
         /// The tracklist

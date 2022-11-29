@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FocusTimer.Classes
+namespace FocusTimer.Services
 {
     /// <summary>
     /// Handles the json file
     /// </summary>
-    public interface IJsonFile
+    public interface IJsonFileService
     {
         public IStatistics Statistics { get; set; }
 

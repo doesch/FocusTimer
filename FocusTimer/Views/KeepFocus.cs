@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using FocusTimer.Classes;
+using FocusTimer.Services;
 
 namespace FocusTimer
 {
@@ -17,16 +17,16 @@ namespace FocusTimer
     /// </summary>
     public partial class KeepFocus : BaseView, IDisposable
     {
-        private IFocusTimer m_Timer;
-        private IPlayer m_Player;
-        private IJsonFile m_JsonFile; // statistics
+        private IFocusTimerService m_Timer;
+        private IPlayerService m_Player;
+        private IJsonFileService m_JsonFile; // statistics
 
         /// <summary>
         /// run focus time
         /// </summary>
         /// <param name="pTime"></param>
         /// <param name="pSelectedTrack"></param>
-        public KeepFocus(IFocusTimer pTimer, IPlayer pPlayer, IJsonFile pJsonFile)
+        public KeepFocus(IFocusTimerService pTimer, IPlayerService pPlayer, IJsonFileService pJsonFile)
         {
             m_Timer = pTimer;
             m_Player = pPlayer;
@@ -66,7 +66,7 @@ namespace FocusTimer
         private void Timer_Tick(object? sender, EventArgs e)
         {
             // show time in label
-            var timer = (FocusTimer.Classes.FocusTimer)sender;
+            var timer = (FocusTimer.Services.FocusTimerService)sender;
 
             // use invoker for threads
             RenderTime(timer);
@@ -78,7 +78,7 @@ namespace FocusTimer
         /// <summary>
         /// Save statistics
         /// </summary>
-        private void SaveStats(IFocusTimer pFocusTimer)
+        private void SaveStats(IFocusTimerService pFocusTimer)
         {
             if (pFocusTimer.CurrentTime.Seconds == 0)
             {
@@ -107,7 +107,7 @@ namespace FocusTimer
         /// Display the time
         /// </summary>
         /// <param name="timer"></param>
-        private void RenderTime(IFocusTimer pTimer)
+        private void RenderTime(IFocusTimerService pTimer)
         {
             if (this.labelCurrentTime.InvokeRequired)
             {

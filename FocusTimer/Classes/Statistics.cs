@@ -5,7 +5,7 @@ using System.Text;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
-namespace FocusTimer.Classes
+namespace FocusTimer.Services
 {
     /// <summary>
     /// All Statistics
