@@ -34,7 +34,7 @@ namespace FocusTimer.Views
             labelCurrentTime.Text = m_JsonFile.Statistics.CurrentDay.FocusTime.ToString(Constants.cDisplayTimeFormatShort);
 
             // show yesterday´s statistic
-            var focusTimeYesterday = m_JsonFile.Statistics.AllDays.OrderByDescending(d => d.FocusTime).Select(x => x.FocusTime).First().ToString(Constants.cDisplayTimeFormatShort);
+            var focusTimeYesterday = m_JsonFile.Statistics.AllDays.OrderByDescending(d => d.DateTimeUtc).First().FocusTime.ToString(Constants.cDisplayTimeFormatShort);
             labelLastFocusTime.Text = $"Your last focus time was: {focusTimeYesterday}";
         }
 
