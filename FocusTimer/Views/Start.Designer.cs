@@ -33,6 +33,8 @@
             this.pictureBoxMain = new System.Windows.Forms.PictureBox();
             this.labelMainText = new System.Windows.Forms.Label();
             this.labelCurrentTime = new System.Windows.Forms.Label();
+            this.labelLastFocusTime = new System.Windows.Forms.Label();
+            this.linkLabelStatistics = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMain)).BeginInit();
             this.SuspendLayout();
             // 
@@ -94,11 +96,33 @@
             this.labelCurrentTime.Text = "----";
             this.labelCurrentTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // labelLastFocusTime
+            // 
+            this.labelLastFocusTime.Location = new System.Drawing.Point(3, 273);
+            this.labelLastFocusTime.Name = "labelLastFocusTime";
+            this.labelLastFocusTime.Size = new System.Drawing.Size(251, 23);
+            this.labelLastFocusTime.TabIndex = 11;
+            this.labelLastFocusTime.Text = "Your last focus time was:";
+            this.labelLastFocusTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // linkLabelStatistics
+            // 
+            this.linkLabelStatistics.Location = new System.Drawing.Point(5, 296);
+            this.linkLabelStatistics.Name = "linkLabelStatistics";
+            this.linkLabelStatistics.Size = new System.Drawing.Size(249, 23);
+            this.linkLabelStatistics.TabIndex = 13;
+            this.linkLabelStatistics.TabStop = true;
+            this.linkLabelStatistics.Text = "Statistics";
+            this.linkLabelStatistics.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.linkLabelStatistics.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelStatistics_LinkClicked);
+            // 
             // Start
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.linkLabelStatistics);
+            this.Controls.Add(this.labelLastFocusTime);
             this.Controls.Add(this.labelCurrentTime);
             this.Controls.Add(this.labelMainText);
             this.Controls.Add(this.pictureBoxMain);
@@ -118,5 +142,7 @@
         private PictureBox pictureBoxMain;
         private Label labelMainText;
         private Label labelCurrentTime;
+        private Label labelLastFocusTime;
+        private LinkLabel linkLabelStatistics;
     }
 }

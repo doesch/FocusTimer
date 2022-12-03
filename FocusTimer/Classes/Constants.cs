@@ -16,12 +16,19 @@ namespace FocusTimer.Services
         /// </summary>
         public const string cDisplayTimeFormat = "hh\\:mm\\:ss";
 
+        /// <summary>
+        /// Format of the focus time in the statistics table
+        /// </summary>
+        public const string cDisplayFocusTimeDateFormat = "ddd, dd MMM";
 
         /// <summary>
         /// The displayed timeformat without seconds
         /// </summary>
         public const string cDisplayTimeFormatShort = "hh\\:mm";
 
+        /// <summary>
+        /// The logtime format
+        /// </summary>
         public const string cLogTimeFormat = "yyyy-MM-dd hh:mm";
 
         /// <summary>

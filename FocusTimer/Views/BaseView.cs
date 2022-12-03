@@ -15,7 +15,8 @@ namespace FocusTimer.Views
         Settings,
         KeepFocus,
         End,
-        Break
+        Break,
+        Statistics
     }
 
     /// <summary>

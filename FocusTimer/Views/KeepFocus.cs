@@ -51,6 +51,9 @@ namespace FocusTimer
             m_Timer.Tick += Timer_Tick;            
             m_Timer.End += Timer_End;
 
+            // apply start time for focus time from settings
+            m_Timer.StartValue = SettingsFile.Default.StartValue;
+
             // start timer
             m_Timer.Start();
 

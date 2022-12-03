@@ -30,18 +30,18 @@ namespace FocusTimer.Views
         /// <exception cref="NotImplementedException"></exception>
         private void Init()
         {
-            // display statistic
+            // display current´s days statistic
             labelCurrentTime.Text = m_JsonFile.Statistics.CurrentDay.FocusTime.ToString(Constants.cDisplayTimeFormatShort);
+
+            // show yesterday´s statistic
+            var focusTimeYesterday = m_JsonFile.Statistics.AllDays.OrderByDescending(d => d.FocusTime).Select(x => x.FocusTime).First().ToString(Constants.cDisplayTimeFormatShort);
+            labelLastFocusTime.Text = $"Your last focus time was: {focusTimeYesterday}";
         }
 
         private void bttnStartFocusTime_Click(object sender, EventArgs e)
         {
-            // apply start time for focus time from settings
-            m_Timer.StartValue = SettingsFile.Default.StartValue;
             this.ChangeView(ViewsEnum.KeepFocus);
         }
-
-
         private void labelMainText_Click(object sender, EventArgs e)
         {
 
@@ -50,6 +50,11 @@ namespace FocusTimer.Views
         private void linkLabelStart_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             this.ChangeView(ViewsEnum.Settings);
+        }
+
+        private void linkLabelStatistics_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.ChangeView(ViewsEnum.Statistics);
         }
     }
 }
