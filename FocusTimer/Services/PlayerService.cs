@@ -136,14 +136,7 @@ namespace FocusTimer.Services
         /// </summary>
         public static void PlayAlarm()
         {
-            new Thread(() =>
-            {
-                for (int i = 0; i < 3; i++)
-                {
-                    Alarm.Play();
-                    Thread.Sleep(1250);
-                }
-            }).Start();
+            Alarm.Play();
         }
 
         /// <summary>
