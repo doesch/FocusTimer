@@ -35,7 +35,8 @@ namespace FocusTimer.Services
             if (!File.Exists(m_PathToLogfile))
             {
                 // create logfile
-                File.Create(m_PathToLogfile);
+                using (File.Create(m_PathToLogfile))
+                { }
             }
         }
 
