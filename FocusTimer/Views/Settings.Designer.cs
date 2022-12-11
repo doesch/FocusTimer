@@ -55,9 +55,9 @@
             this.bttnStart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bttnStart.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.bttnStart.ForeColor = System.Drawing.Color.White;
-            this.bttnStart.Location = new System.Drawing.Point(3, 587);
+            this.bttnStart.Location = new System.Drawing.Point(3, 570);
             this.bttnStart.Name = "bttnStart";
-            this.bttnStart.Size = new System.Drawing.Size(291, 50);
+            this.bttnStart.Size = new System.Drawing.Size(291, 67);
             this.bttnStart.TabIndex = 0;
             this.bttnStart.Text = "Start Focus Time";
             this.bttnStart.UseVisualStyleBackColor = false;
@@ -109,7 +109,7 @@
             this.dataGridViewPlayList.RowHeadersVisible = false;
             this.dataGridViewPlayList.RowHeadersWidth = 51;
             this.dataGridViewPlayList.RowTemplate.Height = 25;
-            this.dataGridViewPlayList.Size = new System.Drawing.Size(291, 473);
+            this.dataGridViewPlayList.Size = new System.Drawing.Size(291, 456);
             this.dataGridViewPlayList.TabIndex = 2;
             // 
             // labelPlayList
@@ -142,7 +142,7 @@
             // 
             // linkLabelStart
             // 
-            this.linkLabelStart.Location = new System.Drawing.Point(3, 561);
+            this.linkLabelStart.Location = new System.Drawing.Point(3, 544);
             this.linkLabelStart.Name = "linkLabelStart";
             this.linkLabelStart.Size = new System.Drawing.Size(291, 23);
             this.linkLabelStart.TabIndex = 7;
