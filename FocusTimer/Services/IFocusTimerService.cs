@@ -9,7 +9,7 @@ namespace FocusTimer.Services
     public interface IFocusTimerService
     {
         // the value in Minutes
-        public int StartValue { set; }
+        public int StartValue { set; get; }
 
         public TimeSpan CurrentTime { get; }
 

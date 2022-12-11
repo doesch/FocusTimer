@@ -52,7 +52,10 @@ namespace FocusTimer
             m_Timer.End += Timer_End;
 
             // apply start time for focus time from settings
-            m_Timer.StartValue = SettingsFile.Default.StartValue;
+            if (m_Timer.StartValue == 0)
+            {
+                m_Timer.StartValue = SettingsFile.Default.StartValue;
+            }
 
             // start timer
             m_Timer.Start();
@@ -102,7 +105,10 @@ namespace FocusTimer
             // keep timer running to calculate the overtime
             // stop timer
             m_Timer.Stop();
-            
+
+            // reset start value
+            m_Timer.StartValue = SettingsFile.Default.StartValue;
+
             ChangeView(ViewsEnum.End);
         }
 
