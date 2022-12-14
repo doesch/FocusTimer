@@ -55,9 +55,9 @@
             this.bttnStart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bttnStart.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.bttnStart.ForeColor = System.Drawing.Color.White;
-            this.bttnStart.Location = new System.Drawing.Point(3, 570);
+            this.bttnStart.Location = new System.Drawing.Point(3, 427);
             this.bttnStart.Name = "bttnStart";
-            this.bttnStart.Size = new System.Drawing.Size(291, 67);
+            this.bttnStart.Size = new System.Drawing.Size(254, 50);
             this.bttnStart.TabIndex = 0;
             this.bttnStart.Text = "Start Focus Time";
             this.bttnStart.UseVisualStyleBackColor = false;
@@ -82,7 +82,7 @@
             0,
             0});
             this.inputTime.Name = "inputTime";
-            this.inputTime.Size = new System.Drawing.Size(291, 27);
+            this.inputTime.Size = new System.Drawing.Size(254, 23);
             this.inputTime.TabIndex = 1;
             this.inputTime.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.inputTime.Value = new decimal(new int[] {
@@ -109,15 +109,15 @@
             this.dataGridViewPlayList.RowHeadersVisible = false;
             this.dataGridViewPlayList.RowHeadersWidth = 51;
             this.dataGridViewPlayList.RowTemplate.Height = 25;
-            this.dataGridViewPlayList.Size = new System.Drawing.Size(291, 456);
+            this.dataGridViewPlayList.Size = new System.Drawing.Size(254, 313);
             this.dataGridViewPlayList.TabIndex = 2;
             // 
             // labelPlayList
             // 
             this.labelPlayList.AutoSize = true;
-            this.labelPlayList.Location = new System.Drawing.Point(3, 53);
+            this.labelPlayList.Location = new System.Drawing.Point(3, 67);
             this.labelPlayList.Name = "labelPlayList";
-            this.labelPlayList.Size = new System.Drawing.Size(58, 20);
+            this.labelPlayList.Size = new System.Drawing.Size(47, 15);
             this.labelPlayList.TabIndex = 3;
             this.labelPlayList.Text = "Playlist:";
             // 
@@ -126,13 +126,13 @@
             this.labelFocusTimeMinutes.AutoSize = true;
             this.labelFocusTimeMinutes.Location = new System.Drawing.Point(3, 0);
             this.labelFocusTimeMinutes.Name = "labelFocusTimeMinutes";
-            this.labelFocusTimeMinutes.Size = new System.Drawing.Size(152, 20);
+            this.labelFocusTimeMinutes.Size = new System.Drawing.Size(124, 15);
             this.labelFocusTimeMinutes.TabIndex = 4;
             this.labelFocusTimeMinutes.Text = "Focus Time (Minutes):";
             // 
             // bttnSelectDirectory
             // 
-            this.bttnSelectDirectory.Location = new System.Drawing.Point(265, 56);
+            this.bttnSelectDirectory.Location = new System.Drawing.Point(228, 56);
             this.bttnSelectDirectory.Name = "bttnSelectDirectory";
             this.bttnSelectDirectory.Size = new System.Drawing.Size(29, 23);
             this.bttnSelectDirectory.TabIndex = 6;
@@ -142,9 +142,9 @@
             // 
             // linkLabelStart
             // 
-            this.linkLabelStart.Location = new System.Drawing.Point(3, 544);
+            this.linkLabelStart.Location = new System.Drawing.Point(3, 401);
             this.linkLabelStart.Name = "linkLabelStart";
-            this.linkLabelStart.Size = new System.Drawing.Size(291, 23);
+            this.linkLabelStart.Size = new System.Drawing.Size(254, 23);
             this.linkLabelStart.TabIndex = 7;
             this.linkLabelStart.TabStop = true;
             this.linkLabelStart.Text = "Start Page";
@@ -162,7 +162,7 @@
             this.Controls.Add(this.inputTime);
             this.Controls.Add(this.bttnStart);
             this.Name = "Settings";
-            this.Size = new System.Drawing.Size(297, 640);
+            this.Size = new System.Drawing.Size(260, 480);
             ((System.ComponentModel.ISupportInitialize)(this.inputTime)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPlayList)).EndInit();
             this.ResumeLayout(false);
